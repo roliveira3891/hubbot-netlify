@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import Link from "next/link";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -67,6 +68,11 @@ const Header = () => {
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </Button>
+            <Button variant="hero" size="sm" asChild>
+              <Link href="https://app.hubbot.io">
+                Login
+              </Link>
             </Button>
             <Button variant="hero" size="sm">
               Falar com Especialista

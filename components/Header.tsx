@@ -5,10 +5,12 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import Link from "next/link";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -74,7 +76,7 @@ const Header = () => {
                 Login
               </Link>
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" onClick={() => setIsContactDialogOpen(true)}>
               Falar com Especialista
             </Button>
           </div>
@@ -117,7 +119,12 @@ const Header = () => {
                 Resultados
               </button>
               <div className="pt-4 mt-2 border-t border-border px-4">
-                <Button variant="hero" size="sm" className="w-full">
+                <Button
+                  variant="hero"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => setIsContactDialogOpen(true)}
+                >
                   Falar com Especialista
                 </Button>
               </div>
@@ -125,6 +132,11 @@ const Header = () => {
           </div>
         )}
       </div>
+
+      <ContactFormDialog
+        open={isContactDialogOpen}
+        onOpenChange={setIsContactDialogOpen}
+      />
     </header>
   );
 };

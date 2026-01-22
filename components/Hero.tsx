@@ -1,9 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Wifi, Phone, Tv, Zap } from "lucide-react";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 const Hero = () => {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Background Glow */}
@@ -42,7 +46,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => setIsContactDialogOpen(true)}>
               Quero vender mais planos agora
             </Button>
             {/* <Button variant="heroOutline" size="xl">
@@ -112,6 +116,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <ContactFormDialog
+        open={isContactDialogOpen}
+        onOpenChange={setIsContactDialogOpen}
+      />
     </section>
   );
 };

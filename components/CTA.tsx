@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Wifi, MessageCircle, ArrowRight } from "lucide-react";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 const CTA = () => {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background */}
@@ -31,11 +37,20 @@ const CTA = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Button variant="hero" size="xl" className="group">
+            <Button
+              variant="hero"
+              size="xl"
+              className="group"
+              onClick={() => setIsContactDialogOpen(true)}
+            >
               Quero vender mais planos agora
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="heroOutline" size="xl">
+            <Button
+              variant="heroOutline"
+              size="xl"
+              onClick={() => setIsContactDialogOpen(true)}
+            >
               <MessageCircle className="w-5 h-5" />
               Testar IA no meu WhatsApp
             </Button>
@@ -47,6 +62,11 @@ const CTA = () => {
           </p>
         </div>
       </div>
+
+      <ContactFormDialog
+        open={isContactDialogOpen}
+        onOpenChange={setIsContactDialogOpen}
+      />
     </section>
   );
 };

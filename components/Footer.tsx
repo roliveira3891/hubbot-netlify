@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { Wifi, Phone, Tv } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -61,12 +62,14 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 HubBot. Todos os direitos reservados.
+            HubBot é uma marca da{" "}
+            <span className="text-foreground font-medium">Fabrica de Soluções</span>{" "}
+            — tecnologia que trabalha enquanto você descansa.
           </p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-foreground transition-colors">Termos</a>
-            <a href="#" className="hover:text-foreground transition-colors">LGPD</a>
+            <Link href="/politica-de-privacidade" className="hover:text-foreground transition-colors">Privacidade</Link>
+            <Link href="/termos-de-servico" className="hover:text-foreground transition-colors">Termos</Link>
+            <Link href="/politica-de-privacidade#10" className="hover:text-foreground transition-colors">LGPD</Link>
           </div>
         </div>
       </div>

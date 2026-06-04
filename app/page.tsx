@@ -9,16 +9,18 @@ import Footer from "@/components/Footer";
 import { createMetadata, createSoftwareApplicationSchema } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Agentes de IA para Telecomunicações",
-  description: "Transforme seu atendimento com agentes de IA especializados em telecomunicações. Atendimento 24/7, redução de custos de 70% e aumento da satisfação do cliente.",
+  title: "HubBot — Plataforma de Atendimento com IA para Provedores de Internet",
+  description:
+    "HubBot é a plataforma omnicanal com IA para provedores de internet e telecom. Unifique WhatsApp, Telegram, Instagram e chat web. Automatize atendimento, qualifique leads e tenha visibilidade completa do seu funil.",
   keywords: [
-    "agentes de IA",
-    "telecomunicações",
-    "chatbot whatsapp",
-    "atendimento automático",
-    "SAC automatizado",
-    "IA conversacional",
-    "automação de atendimento",
+    "plataforma de atendimento para provedores de internet",
+    "omnichannel para telecom",
+    "agentes de IA para ISP",
+    "automação de atendimento WhatsApp telecom",
+    "CRM para provedor de internet",
+    "inbox omnicanal telecom",
+    "IA para provedor de internet",
+    "atendimento automatizado provedor",
   ],
   path: "/",
 });

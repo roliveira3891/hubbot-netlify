@@ -3,26 +3,27 @@ import { Metadata } from "next";
 // Configurações SEO centralizadas
 export const siteConfig = {
   name: "HubBot",
-  title: "HubBot - Agentes de IA para Telecomunicações",
-  description: "Transforme seu atendimento com agentes de IA especializados em telecomunicações. Atendimento 24/7, redução de custos e aumento da satisfação do cliente.",
+  title: "HubBot — Agentes de IA para Provedores de Internet e Telecom",
+  description: "HubBot é a plataforma de agentes de IA para provedores de internet, revendas de telecom e empresas de TV por assinatura. Reduza custos em 70%, atenda 24/7 via WhatsApp e automatize seu SAC.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://hubbot.com.br",
   ogImage: "/og-image.jpg",
   author: {
     name: "HubBot",
-    twitter: "@hubbot",
+    twitter: "@hubbotoficial",
   },
   keywords: [
-    "IA",
-    "inteligência artificial",
-    "telecomunicações",
-    "chatbot",
-    "atendimento automático",
+    "agentes de IA telecomunicações",
+    "chatbot para provedores de internet",
+    "automação de atendimento telecom",
+    "SAC automatizado WhatsApp",
+    "IA para provedor de internet",
+    "atendimento 24/7 telecomunicações",
+    "redução de custos atendimento",
+    "inteligência artificial telecomunicações",
+    "chatbot WhatsApp Business",
+    "automação SAC",
     "agentes virtuais",
-    "atendimento ao cliente",
-    "automação",
-    "WhatsApp Business",
-    "CRM",
-    "SAC automatizado",
+    "CRM telecomunicações",
   ],
 };
 
@@ -48,8 +49,10 @@ export const baseMetadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico",
   },
   manifest: "/site.webmanifest",
   openGraph: {
@@ -85,6 +88,9 @@ export const baseMetadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: siteConfig.url,
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
@@ -148,19 +154,19 @@ export function createOrganizationSchema() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/assets/hubbot-logo-light.svg`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}/assets/hubbot-logo.png`,
+      width: 200,
+      height: 60,
+    },
     description: siteConfig.description,
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "Customer Service",
-      availableLanguage: ["Portuguese", "English"],
+      contactType: "customer support",
+      availableLanguage: "Portuguese",
+      areaServed: "BR",
     },
-    sameAs: [
-      // Adicione suas redes sociais aqui
-      // "https://www.facebook.com/hubbot",
-      // "https://www.linkedin.com/company/hubbot",
-      // "https://twitter.com/hubbot",
-    ],
   };
 }
 
@@ -171,13 +177,10 @@ export function createWebsiteSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/busca?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
+    inLanguage: "pt-BR",
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
     },
   };
 }

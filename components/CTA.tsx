@@ -50,7 +50,7 @@ const CTA = () => {
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <Link href="https://app.hubbot.io">
+              <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
                 Acessar Plataforma
               </Link>

@@ -72,7 +72,7 @@ const Header = () => {
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>
             <Button variant="hero" size="sm" asChild>
-              <Link href="https://app.hubbot.io">
+              <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">
                 Login
               </Link>
             </Button>

@@ -69,7 +69,7 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <Link href="https://app.hubbot.io">Já tenho conta</Link>
+              <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">Já tenho conta</Link>
             </Button>
           </div>
 

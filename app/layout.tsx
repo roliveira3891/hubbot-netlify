@@ -45,7 +45,7 @@ export default function RootLayout({
         <Providers>{children}</Providers>
         <Script
           src="https://widget.hubbot.io/widget.js"
-          data-organization-id="mh7d2mhr8ya6kd2v9qds20k3rh7xzc0q"
+          data-organization-id="mh71q8d4qwe4tc9q6nz9zqckn587t6m1"
           strategy="afterInteractive"
         />
       </body>

@@ -40,7 +40,7 @@ const CTA = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <Button
+            {/* <Button
               variant="hero"
               size="xl"
               className="group"
@@ -48,7 +48,7 @@ const CTA = () => {
             >
               Solicitar Demonstração
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </Button> */}
             <Button variant="heroOutline" size="xl" asChild>
               <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />

@@ -287,10 +287,10 @@ export default function SegmentosPage() {
               Fale com nossos especialistas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" className="group">
+              {/* <Button variant="hero" size="lg" className="group">
                 Falar com Especialista
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </Button> */}
               <Button variant="outline" size="lg">
                 Ver Todos os Recursos
               </Button>

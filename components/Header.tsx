@@ -76,9 +76,9 @@ const Header = () => {
                 Login
               </Link>
             </Button>
-            <Button variant="hero" size="sm" onClick={() => setIsContactDialogOpen(true)}>
+            {/* <Button variant="hero" size="sm" onClick={() => setIsContactDialogOpen(true)}>
               Falar com Especialista
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -119,14 +119,14 @@ const Header = () => {
                 Resultados
               </button>
               <div className="pt-4 mt-2 border-t border-border px-4">
-                <Button
+                {/* <Button
                   variant="hero"
                   size="sm"
                   className="w-full"
                   onClick={() => setIsContactDialogOpen(true)}
                 >
                   Falar com Especialista
-                </Button>
+                </Button> */}
               </div>
             </nav>
           </div>

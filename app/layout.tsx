@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { baseMetadata, createOrganizationSchema, createWebsiteSchema } from "@/lib/seo";
@@ -42,6 +43,11 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}>
         <Providers>{children}</Providers>
+        <Script
+          src="https://widget.hubbot.io/widget.js"
+          data-organization-id="mh7d2mhr8ya6kd2v9qds20k3rh7xzc0q"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { CheckCircle, ChevronRight, Cpu, Brain, Zap } from "lucide-react";
 
 const agentTypes = [
@@ -118,9 +119,12 @@ const AIAgents = () => {
 
           <div className="relative">
             <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
-              <img
-                src={"/assets/ai-builder-mockup.png"}
+              <Image
+                src="/assets/ai-builder-mockup.png"
                 alt="HubBot — Editor de agentes de IA"
+                width={1888}
+                height={916}
+                sizes="(max-width: 1024px) 100vw, 600px"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />

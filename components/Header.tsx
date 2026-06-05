@@ -6,11 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import Link from "next/link";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
+import { useMounted } from "@/hooks/use-mounted";
 
 const Header = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const mounted = useMounted();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
+  // Evita mismatch de hidratação: o tema só é conhecido no cliente.
+  // Antes de montar, renderizamos o estado neutro (dark, que é o default).
+  const isDark = !mounted || resolvedTheme === "dark";
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -27,8 +33,10 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center group">
             <img
-              src={theme === 'dark' ? '/assets/hubbot-logo-dark.svg' : '/assets/hubbot-logo-light.svg'}
+              src={isDark ? '/assets/hubbot-logo-dark.svg' : '/assets/hubbot-logo-light.svg'}
               alt="HubBot"
+              width={140}
+              height={40}
               className="h-10 w-auto group-hover:scale-105 transition-transform"
             />
           </a>
@@ -67,9 +75,10 @@ const Header = () => {
               variant="ghost" 
               size="sm" 
               className="text-muted-foreground hover:text-foreground"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(isDark ? 'light' : 'dark')}
+              aria-label="Alternar tema"
             >
-              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>
             <Button variant="hero" size="sm" asChild>
               <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">

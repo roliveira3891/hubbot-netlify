@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ShoppingCart, Building2, GraduationCap, Landmark, HeartPulse, ArrowRight, CheckCircle2, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Soluções por Segmento | E-commerce, Empresas, Educação e Mais",
@@ -153,8 +153,17 @@ const segmentosSections = [
 ];
 
 export default function SegmentosPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Início", path: "/" },
+    { name: "Segmentos", path: "/segmentos" },
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}

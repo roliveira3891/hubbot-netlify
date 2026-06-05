@@ -1,0 +1,37 @@
+# HubBot
+
+> HubBot é a plataforma de atendimento com agentes de Inteligência Artificial para provedores de internet (ISPs), revendas de telecom e empresas de TV por assinatura. A IA atende, vende e dá suporte 24/7 em WhatsApp, Instagram, Telegram, chat web e voz, reduzindo custos de atendimento em até 70% e transferindo para a equipe humana apenas o que precisa de atenção.
+
+## Sobre o HubBot
+
+- **O que é:** plataforma omnicanal de atendimento com agentes de IA especializados na realidade de telecom.
+- **Para quem:** provedores de internet, revendas de telecom e empresas de TV por assinatura no Brasil.
+- **Idioma:** Português do Brasil (pt-BR).
+- **Marca de:** Fabrica de Soluções.
+- **Contato:** suporte@hubbot.io
+
+## Principais recursos
+
+- **Inbox omnicanal:** WhatsApp, Instagram, Telegram, chat web e voz em uma única fila, com histórico completo do cliente.
+- **Agentes de IA configuráveis:** múltiplos agentes (suporte técnico, vendas, recepção, cobrança), cada um com tom e escopo definidos pela empresa.
+- **Base de conhecimento (RAG):** a IA responde com base nos planos, cobertura, políticas e documentos da própria empresa — não em dados genéricos.
+- **Campanhas e disparos:** mensagens segmentadas via WhatsApp com controle de delivery, opt-out e métricas.
+- **NPS automatizado:** pesquisa de satisfação após cada atendimento.
+- **CRM de contatos:** gestão do ciclo de vida do cliente (prospecção, ativação, retenção, churn).
+- **Analytics em tempo real:** tempo de resposta, taxa de resolução por IA, performance por agente e funil de conversão.
+- **Handoff IA→humano:** transferência configurável da IA para a equipe, com supervisão gerencial.
+
+## Diferenciais
+
+- Especializado em telecom: a IA entende o contexto de provedores de internet, não é um chatbot genérico.
+- Disponível 24 horas por dia, 7 dias por semana.
+- Redução de custos de atendimento de até 70%.
+- Respostas baseadas no conteúdo real da empresa, evitando informações inventadas.
+
+## Páginas
+
+- [Início](https://hubbot.io/): visão geral da plataforma de IA para provedores e telecom.
+- [Produto](https://hubbot.io/produto): agentes de IA, caixa de entrada unificada, workflows, analytics e integrações.
+- [Segmentos](https://hubbot.io/segmentos): aplicações por segmento de mercado.
+- [Política de Privacidade](https://hubbot.io/politica-de-privacidade)
+- [Termos de Serviço](https://hubbot.io/termos-de-servico)

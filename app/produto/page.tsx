@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Bot, Inbox, Workflow, BarChart3, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Plataforma Completa de IA para Atendimento | Produto",
@@ -128,8 +128,17 @@ const productSections = [
 ];
 
 export default function ProdutoPage() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Início", path: "/" },
+    { name: "Produto", path: "/produto" },
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}

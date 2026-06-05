@@ -5,12 +5,16 @@ export const siteConfig = {
   name: "HubBot",
   title: "HubBot — Agentes de IA para Provedores de Internet e Telecom",
   description: "HubBot é a plataforma de agentes de IA para provedores de internet, revendas de telecom e empresas de TV por assinatura. Reduza custos em 70%, atenda 24/7 via WhatsApp e automatize seu SAC.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://hubbot.com.br",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://hubbot.io",
   ogImage: "/og-image.jpg",
   author: {
     name: "HubBot",
     twitter: "@hubbotoficial",
   },
+  // Contato e identidade da marca (usado em JSON-LD)
+  email: "suporte@hubbot.io",
+  legalName: "Fabrica de Soluções",
+  sameAs: ["https://www.linkedin.com/company/hubbot-io"],
   keywords: [
     "agentes de IA telecomunicações",
     "chatbot para provedores de internet",
@@ -92,9 +96,6 @@ export const baseMetadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
 };
 
 // Helper para criar metadata de páginas específicas
@@ -152,19 +153,30 @@ export function createOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     url: siteConfig.url,
     logo: {
       "@type": "ImageObject",
       url: `${siteConfig.url}/assets/hubbot-logo.png`,
-      width: 200,
-      height: 60,
+      width: 512,
+      height: 512,
     },
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
     description: siteConfig.description,
+    email: siteConfig.email,
+    sameAs: siteConfig.sameAs,
+    areaServed: {
+      "@type": "Country",
+      name: "Brasil",
+    },
+    knowsLanguage: "pt-BR",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      availableLanguage: "Portuguese",
+      email: siteConfig.email,
+      availableLanguage: ["Portuguese"],
       areaServed: "BR",
     },
   };
@@ -191,17 +203,56 @@ export function createSoftwareApplicationSchema() {
     "@type": "SoftwareApplication",
     name: siteConfig.name,
     applicationCategory: "BusinessApplication",
+    applicationSubCategory: "Customer Service / AI Chatbot",
     operatingSystem: "Web",
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: "pt-BR",
+    featureList: [
+      "Agentes de IA treinados para telecom",
+      "Atendimento omnicanal (WhatsApp, Instagram, Telegram, chat web e voz)",
+      "Automação de SAC e qualificação de leads",
+      "Analytics e relatórios em tempo real",
+      "Integrações com CRM e sistemas de provedor",
+    ],
     offers: {
       "@type": "Offer",
-      price: "0",
       priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+      url: siteConfig.url,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "150",
+    provider: {
+      "@id": `${siteConfig.url}/#organization`,
     },
-    description: siteConfig.description,
+  };
+}
+
+// FAQPage — formato mais citado por IAs e pelo Google (AI Overviews)
+export function createFAQSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+// BreadcrumbList — contexto de navegação para resultados e IAs
+export function createBreadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteConfig.url}${item.path}`,
+    })),
   };
 }

@@ -3,9 +3,15 @@
 import { useTheme } from "next-themes";
 import { Wifi, Phone, Tv } from "lucide-react";
 import Link from "next/link";
+import { useMounted } from "@/hooks/use-mounted";
 
 const Footer = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const mounted = useMounted();
+
+  // Evita mismatch de hidratação: antes de montar usamos o tema default (dark).
+  const isDark = !mounted || resolvedTheme === "dark";
+
   return (
     <footer className="py-16 border-t border-border bg-card/30">
       <div className="container mx-auto px-4">
@@ -13,9 +19,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center mb-4">
-              <img 
-                src={theme === 'dark' ? '/assets/hubbot-logo-dark.svg' : '/assets/hubbot-logo-light.svg'} 
-                alt="HubBot" 
+              <img
+                src={isDark ? '/assets/hubbot-logo-dark.svg' : '/assets/hubbot-logo-light.svg'}
+                alt="HubBot"
+                width={140}
+                height={40}
                 className="h-10 w-auto"
               />
             </a>
@@ -70,6 +78,7 @@ const Footer = () => {
             <Link href="/politica-de-privacidade" className="hover:text-foreground transition-colors">Privacidade</Link>
             <Link href="/termos-de-servico" className="hover:text-foreground transition-colors">Termos</Link>
             <Link href="/politica-de-privacidade#10" className="hover:text-foreground transition-colors">LGPD</Link>
+            <a href="/llms.txt" target="_blank" rel="noopener" className="hover:text-foreground transition-colors">llms.txt</a>
           </div>
         </div>
       </div>

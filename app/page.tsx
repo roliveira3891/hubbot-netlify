@@ -4,6 +4,7 @@ import WhyHubBot from "@/components/WhyHubBot";
 import Features from "@/components/Features";
 import AIAgents from "@/components/AIAgents";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { createMetadata, createSoftwareApplicationSchema } from "@/lib/seo";
@@ -26,8 +27,14 @@ export const metadata = createMetadata({
 });
 
 export default function Home() {
+  const softwareSchema = createSoftwareApplicationSchema();
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
       <Header />
       <main>
         <Hero />
@@ -35,6 +42,7 @@ export default function Home() {
         <Features />
         <AIAgents />
         <Testimonials />
+        <FAQ />
         <CTA />
       </main>
       <Footer />

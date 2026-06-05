@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Inbox,
   Bot,
@@ -129,9 +130,12 @@ const Features = () => {
         <div className="mt-20">
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
-              <img
-                src={"/assets/analytics-mockup.png"}
+              <Image
+                src="/assets/analytics-mockup.png"
                 alt="HubBot — Dashboard de métricas e analytics para provedores"
+                width={1888}
+                height={916}
+                sizes="(max-width: 768px) 100vw, 896px"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />

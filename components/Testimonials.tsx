@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { TrendingUp, Clock, Wifi, Users } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "200+", label: "Provedores ativos" },
-  { icon: TrendingUp, value: "1M+", label: "Mensagens processadas/mês" },
-  { icon: Clock, value: "< 15s", label: "Tempo médio de resposta" },
-  { icon: Wifi, value: "94%", label: "Resoluções automáticas" },
+  { icon: TrendingUp, value: "até 70%", label: "Redução no custo de atendimento" },
+  { icon: Wifi, value: "até 60%", label: "Resoluções automáticas pela IA" },
+  { icon: Clock, value: "< 1 min", label: "Tempo médio de resposta" },
+  { icon: Users, value: "24/7", label: "Atendimento sem plantão" },
 ];
 
 const testimonials = [
@@ -51,7 +52,7 @@ const Testimonials = () => {
             <span className="text-gradient">com a plataforma</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Números reais de provedores que migraram de ferramentas
+            Ganhos médios de provedores que migraram de ferramentas
             improvisadas para uma plataforma estruturada.
           </p>
         </div>
@@ -112,9 +113,11 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.author}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
                 />
                 <div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { baseMetadata, createOrganizationSchema, createWebsiteSchema } from "@/lib/seo";
@@ -49,6 +50,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </body>
+      <GoogleAnalytics gaId="G-CE8J43433W" />
     </html>
   );
 }

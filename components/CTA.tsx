@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
+import { whatsappUrl } from "@/lib/contact";
 import Link from "next/link";
 
 const trustItems = [
@@ -26,32 +27,29 @@ const CTA = () => {
 
           {/* Headline */}
           <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Pronto para estruturar o atendimento
+            Sua operação está pronta para a
             <br />
-            <span className="text-gradient">do seu provedor?</span>
+            <span className="text-gradient">próxima geração do atendimento?</span>
           </h2>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Agende uma demonstração e veja como provedores como o seu estão
-            reduzindo custo de atendimento, aumentando conversão e entregando
-            melhor experiência ao cliente — com uma plataforma feita para isso.
+            Veja como provedores estão unificando atendimento, vendas e suporte em
+            uma única plataforma com IA — reduzindo custo e respondendo em
+            segundos, 24h por dia.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            {/* <Button
-              variant="hero"
-              size="xl"
-              className="group"
-              onClick={() => setIsContactDialogOpen(true)}
-            >
-              Solicitar Demonstração
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button> */}
+            <Button variant="hero" size="xl" className="group" asChild>
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar no WhatsApp
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
                 Acessar Plataforma
               </Link>
             </Button>

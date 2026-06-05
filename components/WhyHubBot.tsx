@@ -57,6 +57,15 @@ const painPoints = [
   },
 ];
 
+const useCases = [
+  "Segunda via de fatura",
+  "Informações financeiras",
+  "Suporte técnico de 1º nível",
+  "Acompanhamento de protocolos",
+  "Qualificação de novos clientes",
+  "Encaminhamento para a equipe certa",
+];
+
 const howItWorks = [
   {
     step: "01",
@@ -137,15 +146,26 @@ const WhyHubBot = () => {
                 A Solução
               </span>
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-4 mb-4">
-                HubBot: o sistema operacional de atendimento
+                Não é mais um chatbot.
                 <br />
-                <span className="text-gradient">para provedores de internet</span>
+                <span className="text-gradient">É IA construída para provedores.</span>
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Uma plataforma única que conecta todos os seus canais, automatiza
-                com IA e entrega a visibilidade que você nunca teve sobre o seu
-                atendimento.
+                Soluções genéricas precisam ser adaptadas ao seu negócio. O HubBot
+                já nasce sabendo como funciona uma operação de telecom — e resolve
+                sozinho solicitações como:
               </p>
+
+              <div className="flex flex-wrap justify-center gap-2 mt-6 max-w-3xl mx-auto">
+                {useCases.map((useCase) => (
+                  <span
+                    key={useCase}
+                    className="text-sm text-foreground bg-primary/5 border border-primary/20 rounded-full px-3 py-1"
+                  >
+                    {useCase}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">

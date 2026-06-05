@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Phone, Wifi, Tv, Send } from "lucide-react";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { HeroSlider } from "@/components/HeroSlider";
+import { whatsappUrl } from "@/lib/contact";
 import Link from "next/link";
 
 const channels = [
@@ -27,7 +28,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm text-muted-foreground">
-              Plataforma de atendimento com IA · Multi-canal · Tempo Real
+              IA especializada para provedores de internet e telecom
             </span>
           </div>
 
@@ -36,11 +37,11 @@ const Hero = () => {
             className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
-            <span className="text-foreground">A plataforma de atendimento</span>
+            <span className="text-foreground">IA especializada</span>
             <br />
-            <span className="text-foreground">com IA para provedores</span>
+            <span className="text-foreground">para provedores de internet</span>
             <br />
-            <span className="text-gradient">de internet e telecom.</span>
+            <span className="text-gradient">e telecom.</span>
           </h1>
 
           {/* Sub */}
@@ -48,10 +49,11 @@ const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            HubBot integra todos os seus canais em uma única plataforma.{" "}
-            <strong className="text-foreground">Agentes de IA</strong> atendem,
-            qualificam e escalem automaticamente — sua equipe foca no que
-            realmente precisa de atenção humana.
+            <strong className="text-foreground">Agentes de IA</strong> treinados
+            para a realidade do telecom atendem, vendem e dão suporte 24h por dia
+            — unificando WhatsApp, Instagram, Telegram, chat e voz em uma única
+            plataforma. A IA resolve o repetitivo sozinha e passa para sua equipe
+            só o que precisa de atenção humana.
           </p>
 
           {/* CTA Buttons */}
@@ -59,15 +61,13 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            {/* <Button
-              variant="hero"
-              size="xl"
-              className="group"
-              onClick={() => setIsContactDialogOpen(true)}
-            >
-              Solicitar Demonstração
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button> */}
+            <Button variant="hero" size="xl" className="group" asChild>
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar no WhatsApp
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <Link href="https://app.hubbot.io" target="_blank" rel="noopener noreferrer">Já tenho conta</Link>
             </Button>
@@ -78,7 +78,7 @@ const Hero = () => {
             className="text-sm text-muted-foreground mb-10 animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
-            ✓ Mais de 200 provedores ativos &nbsp;·&nbsp; ✓ Setup em 24h
+            ✓ Atendimento 24/7 com IA &nbsp;·&nbsp; ✓ Setup em 24h
             &nbsp;·&nbsp; ✓ Sem fidelidade
           </p>
 

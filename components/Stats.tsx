@@ -1,8 +1,8 @@
 const stats = [
-  { value: "10M+", label: "Mensagens processadas" },
-  { value: "5.000+", label: "Empresas ativas" },
-  { value: "99.9%", label: "Uptime garantido" },
-  { value: "< 1s", label: "Tempo de resposta" },
+  { value: "até 70%", label: "Redução no custo de atendimento" },
+  { value: "24/7", label: "Atendimento sem plantão nem hora extra" },
+  { value: "até 60%", label: "Demandas resolvidas pela IA sem humano" },
+  { value: "segundos", label: "Tempo de primeira resposta" },
 ];
 
 const Stats = () => {

@@ -7,16 +7,15 @@ const DURATION = 4000;
 const FADE_MS  = 600;
 
 const slides = [
-  { src: "/assets/screen-conversas.png",  alt: "Conversas"     },
-  { src: "/assets/screen-dashboard.png",  alt: "Dashboard"     },
-  { src: "/assets/screen-agentes.png",    alt: "Agentes de IA" },
-  { src: "/assets/screen-campanhas.png",  alt: "Campanhas"     },
-  { src: "/assets/screen-nps.png",        alt: "NPS"           },
+  { src: "/assets/screen-conversas.png",  alt: "Tela de conversas unificadas do HubBot" },
+  { src: "/assets/screen-dashboard.png",  alt: "Dashboard de métricas do HubBot"        },
+  { src: "/assets/screen-agentes.png",    alt: "Editor de agentes de IA do HubBot"       },
+  { src: "/assets/screen-campanhas.png",  alt: "Gestão de campanhas do HubBot"           },
+  { src: "/assets/screen-nps.png",        alt: "Relatório de NPS do HubBot"              },
 ];
 
 export function HeroSlider() {
   const [index, setIndex]       = useState(0);
-  const [animKey, setAnimKey]   = useState(0); // changing key re-mounts → restarts animation
   const [progress, setProgress] = useState(0);
   const rafRef   = useRef<number | null>(null);
   const startRef = useRef(Date.now());
@@ -31,7 +30,6 @@ export function HeroSlider() {
         rafRef.current = requestAnimationFrame(tick);
       } else {
         setIndex(i => (i + 1) % slides.length);
-        setAnimKey(k => k + 1);
       }
     };
 
@@ -42,19 +40,15 @@ export function HeroSlider() {
   return (
     <>
       <style>{`
-        @keyframes hb-enter {
-          0%   { opacity: 0; transform: scale(0.97) translateY(14px); }
-          100% { opacity: 1; transform: scale(1)    translateY(0);    }
-        }
         @keyframes hb-ken {
           0%   { transform: scale(1);    }
           100% { transform: scale(1.06); }
         }
       `}</style>
 
-      <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
+      {/* aspect-ratio reserva a altura sem precisar de uma imagem "âncora" extra */}
+      <div className="relative aspect-[1888/916] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
 
-        {/* background slides — fade out when not active */}
         {slides.map((slide, i) => (
           <div
             key={slide.src}
@@ -68,46 +62,21 @@ export function HeroSlider() {
             <Image
               src={slide.src}
               alt={slide.alt}
-              width={1280}
-              height={800}
-              unoptimized
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
               priority={i === 0}
-              className="w-full h-auto"
+              loading={i === 0 ? undefined : "lazy"}
+              className="object-cover"
+              style={{
+                // Ken-burns só no slide ativo; trocar de "none" para o valor
+                // reinicia a animação a cada vez que o slide volta a aparecer.
+                animation: i === index
+                  ? `hb-ken ${DURATION + FADE_MS}ms linear forwards`
+                  : "none",
+              }}
             />
           </div>
         ))}
-
-        {/* active slide — remounted on each change to restart animations cleanly */}
-        <div
-          key={animKey}
-          className="absolute inset-0"
-          style={{
-            zIndex: 3,
-            animation: `hb-enter ${FADE_MS}ms cubic-bezier(.4,0,.2,1) forwards,
-                         hb-ken   ${DURATION + FADE_MS}ms ${FADE_MS}ms linear forwards`,
-          }}
-        >
-          <Image
-            src={slides[index].src}
-            alt={slides[index].alt}
-            width={1280}
-            height={800}
-            unoptimized
-            priority
-            className="w-full h-auto"
-          />
-        </div>
-
-        {/* invisible anchor — keeps container height */}
-        <Image
-          src={slides[0].src}
-          alt=""
-          width={1280}
-          height={800}
-          unoptimized
-          className="w-full h-auto invisible"
-          aria-hidden
-        />
 
         {/* colour overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none z-10" />
@@ -127,11 +96,11 @@ export function HeroSlider() {
             >
               {i === index && (
                 <div
-                  className="absolute inset-y-0 left-0 rounded-full"
+                  className="absolute inset-0 rounded-full origin-left"
                   style={{
-                    width:      `${progress * 100}%`,
+                    // transform é composto (GPU) — evita layout/paint a cada frame
+                    transform:  `scaleX(${progress})`,
                     background: "linear-gradient(90deg,#0EA5E9,#2DD4BF)",
-                    transition: "none",
                   }}
                 />
               )}

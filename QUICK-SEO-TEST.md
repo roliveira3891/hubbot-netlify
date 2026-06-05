@@ -109,12 +109,12 @@ Acesse http://localhost:3000 e repita os testes.
 
 1. **Atualizar .env.local**:
 ```env
-NEXT_PUBLIC_SITE_URL=https://hubbot.com.br
+NEXT_PUBLIC_SITE_URL=https://hubbot.io
 ```
 
 2. **Atualizar robots.txt**:
 ```txt
-Sitemap: https://hubbot.com.br/sitemap.xml
+Sitemap: https://hubbot.io/sitemap.xml
 ```
 
 3. **Verificar metadata** em todas as páginas

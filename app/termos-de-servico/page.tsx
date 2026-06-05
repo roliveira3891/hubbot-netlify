@@ -51,10 +51,10 @@ export default function TermosDeServicoPag() {
                 <p className="text-foreground">
                   <strong>Contato:</strong>{" "}
                   <a
-                    href="mailto:contato@hubbot.com.br"
+                    href="mailto:contato@hubbot.io"
                     className="text-primary hover:underline"
                   >
-                    contato@hubbot.com.br
+                    contato@hubbot.io
                   </a>
                 </p>
               </div>
@@ -325,10 +325,10 @@ export default function TermosDeServicoPag() {
                 <p className="text-foreground">
                   <strong>E-mail:</strong>{" "}
                   <a
-                    href="mailto:contato@hubbot.com.br"
+                    href="mailto:contato@hubbot.io"
                     className="text-primary hover:underline"
                   >
-                    contato@hubbot.com.br
+                    contato@hubbot.io
                   </a>
                 </p>
                 <p className="text-foreground">

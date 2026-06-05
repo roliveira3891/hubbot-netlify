@@ -52,10 +52,10 @@ export default function PoliticaDePrivacidadePage() {
                 <p className="text-foreground">
                   <strong>Contato:</strong>{" "}
                   <a
-                    href="mailto:privacidade@hubbot.com.br"
+                    href="mailto:privacidade@hubbot.io"
                     className="text-primary hover:underline"
                   >
-                    privacidade@hubbot.com.br
+                    privacidade@hubbot.io
                   </a>
                 </p>
               </div>
@@ -273,10 +273,10 @@ export default function PoliticaDePrivacidadePage() {
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Para exercer seus direitos, entre em contato pelo e-mail:{" "}
                 <a
-                  href="mailto:privacidade@hubbot.com.br"
+                  href="mailto:privacidade@hubbot.io"
                   className="text-primary hover:underline"
                 >
-                  privacidade@hubbot.com.br
+                  privacidade@hubbot.io
                 </a>
               </p>
             </section>
@@ -321,10 +321,10 @@ export default function PoliticaDePrivacidadePage() {
                 <p className="text-foreground">
                   <strong>E-mail:</strong>{" "}
                   <a
-                    href="mailto:privacidade@hubbot.com.br"
+                    href="mailto:privacidade@hubbot.io"
                     className="text-primary hover:underline"
                   >
-                    privacidade@hubbot.com.br
+                    privacidade@hubbot.io
                   </a>
                 </p>
                 <p className="text-foreground">

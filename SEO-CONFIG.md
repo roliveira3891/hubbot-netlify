@@ -20,7 +20,7 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-code
 
 **Em produção, altere para:**
 ```env
-NEXT_PUBLIC_SITE_URL=https://hubbot.com.br
+NEXT_PUBLIC_SITE_URL=https://hubbot.io
 ```
 
 ### 3. **Metadata Otimizada em Todas as Páginas**
@@ -56,7 +56,7 @@ Implementado no layout raiz:
 {
   "@type": "Organization",
   "name": "HubBot",
-  "url": "https://hubbot.com.br",
+  "url": "https://hubbot.io",
   "logo": "...",
   "contactPoint": {...}
 }
@@ -138,13 +138,13 @@ npm start
 
 1. Atualizar `.env.local` ou criar variáveis no Vercel:
 ```env
-NEXT_PUBLIC_SITE_URL=https://hubbot.com.br
+NEXT_PUBLIC_SITE_URL=https://hubbot.io
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=seu-codigo-do-google
 ```
 
 2. Atualizar `public/robots.txt`:
 ```txt
-Sitemap: https://hubbot.com.br/sitemap.xml
+Sitemap: https://hubbot.io/sitemap.xml
 ```
 
 3. Gerar favicons PNG:
@@ -159,7 +159,7 @@ Sitemap: https://hubbot.com.br/sitemap.xml
 
 1. Adicione `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` no `.env.local`
 2. Verifique a propriedade no Google Search Console
-3. Envie o sitemap: `https://hubbot.com.br/sitemap.xml`
+3. Envie o sitemap: `https://hubbot.io/sitemap.xml`
 
 ### Ferramentas de Teste
 

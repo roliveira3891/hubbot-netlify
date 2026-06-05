@@ -66,7 +66,7 @@ Landing page sections:
 - `baseMetadata` - Default metadata for all pages
 - `createMetadata()` - Helper for page-specific metadata
 - JSON-LD schema helpers: `createOrganizationSchema()`, `createWebsiteSchema()`, `createSoftwareApplicationSchema()`
-- Site URL from `NEXT_PUBLIC_SITE_URL` env var (defaults to https://hubbot.com.br)
+- Site URL from `NEXT_PUBLIC_SITE_URL` env var (defaults to https://hubbot.io)
 - Each page should export its own `metadata` using `createMetadata()`
 
 **Styling System:**

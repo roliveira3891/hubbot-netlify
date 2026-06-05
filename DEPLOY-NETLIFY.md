@@ -78,7 +78,7 @@ Por enquanto, use um placeholder:
 
 1. **Site settings** → **Domain management**
 2. **Add custom domain**
-3. Adicione seu domínio (ex: `hubbot.com.br`)
+3. Adicione seu domínio (ex: `hubbot.io`)
 4. Configure DNS conforme instruções do Netlify
 
 ---

@@ -98,15 +98,16 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* Hero Product Slider */}
-          <div
-            className="relative mt-8 animate-fade-up"
-            style={{ animationDelay: "0.5s" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
-            <div className="relative mx-auto max-w-5xl">
-              <HeroSlider />
-            </div>
+        </div>
+
+        {/* Hero Product Slider — fora da coluna de texto para ficar maior */}
+        <div
+          className="relative mt-12 animate-fade-up"
+          style={{ animationDelay: "0.5s" }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
+          <div className="relative mx-auto w-full max-w-6xl xl:max-w-7xl">
+            <HeroSlider />
           </div>
         </div>
       </div>

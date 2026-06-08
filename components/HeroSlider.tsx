@@ -40,14 +40,20 @@ export function HeroSlider() {
   return (
     <>
       <style>{`
-        @keyframes hb-ken {
-          0%   { transform: scale(1);    }
-          100% { transform: scale(1.06); }
+        /* zoom (pouco) + float no QUADRO INTEIRO — a imagem inteira escala,
+           sem cortar as bordas. Dá a sensação "viva" do respond.io. */
+        @keyframes hb-float {
+          0%, 100% { transform: translate3d(0, 0, 0)     scale(1);    }
+          50%      { transform: translate3d(0, -10px, 0) scale(1.025); }
+        }
+        .hb-float { animation: hb-float 7s ease-in-out infinite; will-change: transform; }
+        @media (prefers-reduced-motion: reduce) {
+          .hb-float { animation: none; }
         }
       `}</style>
 
       {/* aspect-ratio reserva a altura sem precisar de uma imagem "âncora" extra */}
-      <div className="relative aspect-[1888/916] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
+      <div className="hb-float relative aspect-[1888/916] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
 
         {slides.map((slide, i) => (
           <div
@@ -67,13 +73,6 @@ export function HeroSlider() {
               priority={i === 0}
               loading={i === 0 ? undefined : "lazy"}
               className="object-cover"
-              style={{
-                // Ken-burns só no slide ativo; trocar de "none" para o valor
-                // reinicia a animação a cada vez que o slide volta a aparecer.
-                animation: i === index
-                  ? `hb-ken ${DURATION + FADE_MS}ms linear forwards`
-                  : "none",
-              }}
             />
           </div>
         ))}

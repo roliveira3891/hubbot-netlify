@@ -135,8 +135,8 @@ const AIAgents = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
           {[
-            { value: "< 15s", label: "Tempo médio de primeira resposta" },
-            { value: "94%", label: "Resoluções sem intervenção humana" },
+            { value: "< 1 min", label: "Tempo médio de primeira resposta" },
+            { value: "até 70%", label: "Resoluções sem intervenção humana" },
             { value: "4+", label: "Tipos de agente disponíveis" },
             { value: "24/7", label: "Disponibilidade garantida" },
           ].map((stat, i) => (

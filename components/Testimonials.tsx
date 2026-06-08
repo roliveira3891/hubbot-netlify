@@ -5,7 +5,7 @@ import { TrendingUp, Clock, Wifi, Users } from "lucide-react";
 
 const stats = [
   { icon: TrendingUp, value: "até 70%", label: "Redução no custo de atendimento" },
-  { icon: Wifi, value: "até 60%", label: "Resoluções automáticas pela IA" },
+  { icon: Wifi, value: "até 70%", label: "Resoluções automáticas pela IA" },
   { icon: Clock, value: "< 1 min", label: "Tempo médio de resposta" },
   { icon: Users, value: "24/7", label: "Atendimento sem plantão" },
 ];
@@ -36,6 +36,10 @@ const testimonials = [
     metric: { icon: Wifi, value: "24/7", label: "atendimento sem parar" },
   },
 ];
+
+// Depoimentos ocultos por enquanto até termos cases reais (logo/cidade/foto
+// e consentimento). Trocar para true para reexibir os cards.
+const showTestimonials = false;
 
 const Testimonials = () => {
   return (
@@ -76,6 +80,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
+        {showTestimonials && (
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
@@ -132,6 +137,7 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+        )}
       </div>
     </section>
   );

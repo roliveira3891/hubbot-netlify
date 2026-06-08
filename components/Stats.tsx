@@ -1,8 +1,8 @@
 const stats = [
   { value: "até 70%", label: "Redução no custo de atendimento" },
   { value: "24/7", label: "Atendimento sem plantão nem hora extra" },
-  { value: "até 60%", label: "Demandas resolvidas pela IA sem humano" },
-  { value: "segundos", label: "Tempo de primeira resposta" },
+  { value: "até 70%", label: "Demandas resolvidas pela IA sem humano" },
+  { value: "< 1 min", label: "Tempo de primeira resposta" },
 ];
 
 const Stats = () => {

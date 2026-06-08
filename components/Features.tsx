@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   Inbox,
   Bot,
@@ -11,6 +10,7 @@ import {
   BarChart3,
   ShieldCheck,
 } from "lucide-react";
+import { ProductCarousel } from "@/components/ProductCarousel";
 
 const features = [
   {
@@ -126,21 +126,24 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Analytics Preview Image */}
-        <div className="mt-20">
-          <div className="max-w-4xl mx-auto">
-            <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
-              <Image
-                src="/assets/analytics-mockup.png"
-                alt="HubBot — Dashboard de métricas e analytics para provedores"
-                width={1888}
-                height={916}
-                sizes="(max-width: 768px) 100vw, 896px"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
-            </div>
+        {/* Product Tour Carousel */}
+        <div className="mt-28">
+          {/* Context header */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Por dentro do HubBot
+            </span>
+            <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+              Veja a plataforma{" "}
+              <span className="text-gradient">em ação</span>
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Do inbox unificado aos agentes de IA, campanhas e relatórios —
+              navegue pelas telas reais que sua equipe usa no dia a dia.
+            </p>
           </div>
+
+          <ProductCarousel />
         </div>
       </div>
     </section>

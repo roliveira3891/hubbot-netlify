@@ -210,7 +210,7 @@ export function createSoftwareApplicationSchema() {
     inLanguage: "pt-BR",
     featureList: [
       "Agentes de IA treinados para telecom",
-      "Atendimento omnicanal (WhatsApp, Instagram, Telegram, chat web e voz)",
+      "Atendimento omnicanal (WhatsApp, Instagram, Telegram e chat web)",
       "Automação de SAC e qualificação de leads",
       "Analytics e relatórios em tempo real",
       "Integrações com CRM e sistemas de provedor",

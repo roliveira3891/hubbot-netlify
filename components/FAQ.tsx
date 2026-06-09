@@ -16,7 +16,7 @@ export const faqItems: { question: string; answer: string }[] = [
   {
     question: "Quais canais de atendimento o HubBot integra?",
     answer:
-      "O HubBot unifica WhatsApp, Instagram, Telegram, chat web e atendimento por voz com IA em uma única caixa de entrada omnicanal, com histórico completo do cliente em qualquer canal.",
+      "O HubBot unifica WhatsApp, Instagram, Telegram e chat web em uma única caixa de entrada omnicanal, com histórico completo do cliente em qualquer canal.",
   },
   {
     question: "O HubBot substitui minha equipe de atendimento?",

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle, Phone, Wifi, Tv, Send } from "lucide-react";
+import { ArrowRight, MessageCircle, Wifi, Tv, Send } from "lucide-react";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { HeroSlider } from "@/components/HeroSlider";
 import { whatsappUrl } from "@/lib/contact";
@@ -11,7 +11,6 @@ import Link from "next/link";
 const channels = [
   { icon: MessageCircle, label: "WhatsApp" },
   { icon: Send, label: "Telegram" },
-  { icon: Phone, label: "Voz (IA)" },
   { icon: Wifi, label: "Chat Web" },
   { icon: Tv, label: "Instagram" },
 ];
@@ -51,7 +50,7 @@ const Hero = () => {
           >
             <strong className="text-foreground">Agentes de IA</strong> treinados
             para a realidade do telecom atendem, vendem e dão suporte 24h por dia
-            — unificando WhatsApp, Instagram, Telegram, chat e voz em uma única
+            — unificando WhatsApp, Instagram, Telegram e chat em uma única
             plataforma. A IA resolve o repetitivo sozinha e passa para sua equipe
             só o que precisa de atenção humana.
           </p>

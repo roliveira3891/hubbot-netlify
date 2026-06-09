@@ -71,7 +71,7 @@ const howItWorks = [
     step: "01",
     icon: Inbox,
     title: "Todos os canais, uma inbox",
-    text: "WhatsApp, Telegram, Instagram, chat web e voz chegam em uma única fila com histórico completo de cada cliente.",
+    text: "WhatsApp, Telegram, Instagram e chat web chegam em uma única fila com histórico completo de cada cliente.",
   },
   {
     step: "02",

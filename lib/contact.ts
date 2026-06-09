@@ -1,9 +1,10 @@
 // Configuração de contato comercial (WhatsApp)
 //
-// TODO: substituir WHATSAPP_NUMBER pelo número comercial real assim que
-// estiver disponível. Use apenas dígitos, com DDI + DDD. Ex: "5511999999999".
-// Enquanto estiver vazio, o link abre o WhatsApp sem destinatário definido.
-export const WHATSAPP_NUMBER = "";
+// Número comercial em formato somente dígitos, com DDI + DDD.
+export const WHATSAPP_NUMBER = "558431051900";
+
+// Número formatado para exibição.
+export const WHATSAPP_DISPLAY = "+55 84 3105-1900";
 
 export const WHATSAPP_DEFAULT_MESSAGE =
   "Olá! Vim pelo site da HubBot e quero conhecer a plataforma.";

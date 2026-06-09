@@ -41,7 +41,7 @@ const features = [
     icon: CalendarCheck,
     title: "Integração com Google Agenda",
     description:
-      "Conecte seu Google Agenda para a IA consultar a disponibilidade e agendar compromissos (ex.: visitas técnicas) automaticamente durante o atendimento. Os dados do Google Agenda são usados exclusivamente para essa finalidade.",
+      "Conecte seu Google Agenda para a IA consultar a disponibilidade e agendar compromissos automaticamente durante o atendimento. Os dados do Google Agenda são usados exclusivamente para essa finalidade.",
     tag: "Agendamento",
   },
   {

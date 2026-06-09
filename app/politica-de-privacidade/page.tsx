@@ -141,7 +141,7 @@ export default function PoliticaDePrivacidadePage() {
                 <li>
                   Esses dados são usados <strong className="text-foreground">exclusivamente</strong>{" "}
                   para que o agente de IA consulte a disponibilidade e crie, leia ou
-                  atualize compromissos (ex.: visitas técnicas) durante o atendimento;
+                  atualize compromissos durante o atendimento;
                 </li>
                 <li>
                   Não usamos os dados do Google Agenda para publicidade, não os vendemos

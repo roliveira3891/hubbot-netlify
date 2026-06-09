@@ -22,7 +22,7 @@ export default function PoliticaDePrivacidadePage() {
               Política de Privacidade
             </h1>
             <p className="text-muted-foreground text-sm">
-              Última atualização: 26 de fevereiro de 2026
+              Última atualização: 9 de junho de 2026
             </p>
           </div>
 
@@ -126,6 +126,55 @@ export default function PoliticaDePrivacidadePage() {
                   por você durante o processo de autorização OAuth do Facebook.
                 </li>
               </ul>
+
+              <h3 className="font-semibold text-foreground text-lg mb-2 mt-6">
+                3.4 Dados da integração com o Google (Google Agenda)
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>
+                  A conexão com o Google Agenda é opcional. Ao autorizá-la via OAuth do
+                  Google, coletamos apenas os dados necessários para a funcionalidade de
+                  agendamento: informações de disponibilidade (horários livres/ocupados)
+                  e eventos da(s) agenda(s) que você selecionar, além dos tokens de
+                  acesso e atualização (refresh token) para manter a conexão ativa;
+                </li>
+                <li>
+                  Esses dados são usados <strong className="text-foreground">exclusivamente</strong>{" "}
+                  para que o agente de IA consulte a disponibilidade e crie, leia ou
+                  atualize compromissos (ex.: visitas técnicas) durante o atendimento;
+                </li>
+                <li>
+                  Não usamos os dados do Google Agenda para publicidade, não os vendemos
+                  e não os compartilhamos com terceiros, exceto provedores de
+                  infraestrutura estritamente necessários para operar o serviço;
+                </li>
+                <li>
+                  Você pode revogar o acesso a qualquer momento, removendo a integração
+                  na plataforma HubBot ou em{" "}
+                  <a
+                    href="https://myaccount.google.com/permissions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    myaccount.google.com/permissions
+                  </a>
+                  .
+                </li>
+              </ul>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                O uso e a transferência, pela HubBot, das informações recebidas das APIs
+                do Google obedecem à{" "}
+                <a
+                  href="https://developers.google.com/terms/api-services-user-data-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Política de Dados do Usuário dos Serviços de API do Google
+                </a>
+                , incluindo os requisitos de Uso Limitado (<em>Limited Use</em>).
+              </p>
             </section>
 
             {/* 4. Finalidade */}

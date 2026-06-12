@@ -4,6 +4,7 @@ import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+import { MetaPixel } from "@/components/MetaPixel";
 import { baseMetadata, createOrganizationSchema, createWebsiteSchema } from "@/lib/seo";
 
 const inter = Inter({
@@ -44,6 +45,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}>
         <Providers>{children}</Providers>
+        <MetaPixel />
         <Script
           src="https://widget.hubbot.io/widget.js"
           data-organization-id="mh71q8d4qwe4tc9q6nz9zqckn587t6m1"

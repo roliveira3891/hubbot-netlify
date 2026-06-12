@@ -19,10 +19,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/segmentos`,
+      url: `${baseUrl}/segmentos/revendas-de-telecom`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/segmentos/provedores-de-internet`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/solucoes/qualidade-no-atendimento`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/solucoes/cobranca-e-segunda-via`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/solucoes/suporte-tecnico-automatizado`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/politica-de-privacidade`,

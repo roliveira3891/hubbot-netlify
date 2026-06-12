@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="py-16 border-t border-border bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center mb-4">
@@ -46,6 +46,31 @@ const Footer = () => {
                 <span className="text-xs text-foreground">TV</span>
               </div>
             </div> */}
+          </div>
+
+          {/* Soluções */}
+          <div>
+            <h2 className="font-semibold text-foreground mb-4">Soluções</h2>
+            <nav className="flex flex-col gap-2">
+              <Link href="/produto" className="text-muted-foreground hover:text-foreground transition-colors">
+                Plataforma
+              </Link>
+              <Link href="/segmentos/provedores-de-internet" className="text-muted-foreground hover:text-foreground transition-colors">
+                Provedores de Internet
+              </Link>
+              <Link href="/segmentos/revendas-de-telecom" className="text-muted-foreground hover:text-foreground transition-colors">
+                Revendas de Telecom
+              </Link>
+              <Link href="/solucoes/qualidade-no-atendimento" className="text-muted-foreground hover:text-foreground transition-colors">
+                Qualidade no Atendimento
+              </Link>
+              <Link href="/solucoes/cobranca-e-segunda-via" className="text-muted-foreground hover:text-foreground transition-colors">
+                Cobrança e 2ª Via
+              </Link>
+              <Link href="/solucoes/suporte-tecnico-automatizado" className="text-muted-foreground hover:text-foreground transition-colors">
+                Suporte Técnico com IA
+              </Link>
+            </nav>
           </div>
 
           {/* Contact */}

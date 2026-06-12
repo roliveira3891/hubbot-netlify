@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
@@ -9,6 +10,7 @@ import { ContactFormDialog } from "@/components/ContactFormDialog";
 import { useMounted } from "@/hooks/use-mounted";
 
 const Header = () => {
+  const router = useRouter();
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useMounted();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +24,9 @@ const Header = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Fora da home a seção não existe: navega para a home com a âncora.
+      router.push(`/#${id}`);
     }
     setIsMenuOpen(false);
   };

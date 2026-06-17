@@ -206,7 +206,7 @@ export default function SuporteTecnicoAutomatizadoPage() {
                 width={1600}
                 height={1068}
                 priority
-                className="w-full aspect-[21/9] object-cover saturate-[0.8] brightness-[0.92]"
+                className="w-full aspect-[4/3] sm:aspect-[21/9] object-cover saturate-[0.8] brightness-[0.92]"
               />
               {/* esfria a foto com as cores da marca */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-accent/10 pointer-events-none" />

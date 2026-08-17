@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyHubBot from "@/components/WhyHubBot";
 import Features from "@/components/Features";
+import Integrations from "@/components/Integrations";
 import AIAgents from "@/components/AIAgents";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -40,6 +41,7 @@ export default function Home() {
         <Hero />
         <WhyHubBot />
         <Features />
+        <Integrations />
         <AIAgents />
         <Testimonials />
         <FAQ />

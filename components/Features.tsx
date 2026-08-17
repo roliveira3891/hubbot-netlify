@@ -10,8 +10,6 @@ import {
   BarChart3,
   ShieldCheck,
   CalendarCheck,
-  Plug,
-  Activity,
 } from "lucide-react";
 import { ProductCarousel } from "@/components/ProductCarousel";
 
@@ -43,20 +41,6 @@ const features = [
     description:
       "Conecte seu Google Agenda para a IA consultar a disponibilidade e agendar compromissos automaticamente durante o atendimento. Os dados do Google Agenda são usados exclusivamente para essa finalidade.",
     tag: "Agendamento",
-  },
-  {
-    icon: Plug,
-    title: "Integração MK Solutions",
-    description:
-      "Conectada ao ERP MK Solutions, a IA consulta faturas, emite 2ª via, verifica conexões e o status do cliente em tempo real — resolvendo cobrança e suporte sem intervenção manual.",
-    tag: "ERP Provedor",
-  },
-  {
-    icon: Activity,
-    title: "Integração Zabbix",
-    description:
-      "Integrada ao Zabbix, a IA verifica o status da ONU e dos equipamentos do cliente para diagnóstico automático de quedas e lentidão antes de abrir chamado.",
-    tag: "Monitoramento",
   },
   {
     icon: Megaphone,

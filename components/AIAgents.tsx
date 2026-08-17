@@ -34,7 +34,7 @@ const capabilities = [
   "Treinado com os planos e coberturas do seu provedor",
   "Responde em português natural, sem parecer robô",
   "Verifica cobertura por endereço em tempo real",
-  "Integra com sistemas de gestão via API (MK Solutions, etc.)",
+  "Integra com o ERP do seu provedor via API (MK, Hubsoft, IXC, SGP)",
   "Transfere para humano com contexto completo da conversa",
   "Aprende com feedbacks e melhora com o tempo",
 ];

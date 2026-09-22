@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
+// import Script from "next/script"; // volta junto com o widget de chat (ver <body>)
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
@@ -46,11 +46,13 @@ export default function RootLayout({
       <body className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}>
         <Providers>{children}</Providers>
         <MetaPixel />
-        <Script
+        {/* Widget de chat oculto por enquanto: o contato do site vai pelo
+            WhatsApp. Para reexibir, descomente o Script abaixo. */}
+        {/* <Script
           src="https://widget.hubbot.io/widget.js"
           data-organization-id="mh71q8d4qwe4tc9q6nz9zqckn587t6m1"
           strategy="afterInteractive"
-        />
+        /> */}
       </body>
       <GoogleAnalytics gaId="G-CE8J43433W" />
     </html>

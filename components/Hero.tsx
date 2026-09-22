@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm text-muted-foreground">
-              Integrado ao IXC, SGP, MK Solutions, Hubsoft e Zabbix
+              Integrado ao IXC, SGP, MK Solutions, Hubsoft, Zabbix e outros
             </span>
           </div>
 

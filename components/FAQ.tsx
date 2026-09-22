@@ -54,9 +54,9 @@ export const faqItems: { question: string; answer: string }[] = [
       "Sim. Os agentes de IA atendem, qualificam leads e dão suporte 24 horas por dia, 7 dias por semana, inclusive fora do horário comercial, finais de semana e feriados. Também é possível montar um workflow em que a equipe atende no horário comercial e a IA assume fora dele.",
   },
   {
-    question: "Preciso trocar meu ERP ou sistema atual para usar o HubBot?",
+    question: "E se o meu ERP não estiver na lista de integrações?",
     answer:
-      "Não. O HubBot conversa com o sistema de gestão que você já utiliza através das integrações disponíveis, funcionando junto com as ferramentas atuais da sua operação.",
+      "A gente desenvolve a integração. As integrações prontas hoje são IXC, SGP/TSMX, MK Solutions, Hubsoft e Zabbix, mas o seu sistema de gestão não é motivo para ficar de fora: nos diga qual você usa e avaliamos junto o que dá para automatizar nele. Você não precisa trocar de ERP para usar o HubBot.",
   },
   {
     question: "Como contratar o HubBot?",

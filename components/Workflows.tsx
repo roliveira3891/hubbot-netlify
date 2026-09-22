@@ -67,7 +67,7 @@ const steps = [
   },
   {
     label: "Serviço",
-    text: "Consulta e executa no IXC, SGP, MK Solutions, Hubsoft e Zabbix dentro do fluxo.",
+    text: "Consulta e executa no IXC, SGP, MK Solutions, Hubsoft, Zabbix e outros dentro do fluxo.",
   },
 ];
 

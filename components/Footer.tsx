@@ -31,7 +31,7 @@ const Footer = () => {
             <p className="text-muted-foreground leading-relaxed max-w-md mb-6">
               A plataforma de atendimento com IA feita para provedores de
               internet, revendas de telecom e empresas de TV por assinatura —
-              integrada ao IXC, SGP, MK Solutions, Hubsoft e Zabbix.
+              integrada ao IXC, SGP, MK Solutions, Hubsoft, Zabbix e outros.
             </p>
             {/* <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10">

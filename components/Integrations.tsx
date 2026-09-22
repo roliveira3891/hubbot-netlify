@@ -3,12 +3,17 @@
 import Image from "next/image";
 import {
   Activity,
+  ArrowRight,
   CalendarCheck,
-  PhoneCall,
-  Target,
   IdCard,
   MapPin,
+  MessageCircle,
+  PhoneCall,
+  Plug,
+  Target,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { whatsappUrl } from "@/lib/contact";
 
 // ERPs de provedor conectados de verdade — as ações abaixo são as que a IA
 // executa durante a própria conversa, não apenas consulta.
@@ -206,6 +211,37 @@ const Integrations = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Usa outro ERP? */}
+        <div className="max-w-6xl mx-auto mt-12">
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-10 text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-primary shadow-glow mb-5">
+              <Plug className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Usa outro ERP?{" "}
+              <span className="text-gradient">A gente integra.</span>
+            </h3>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+              Se o sistema do seu provedor não está na lista, desenvolvemos a
+              integração. Seu ERP não é motivo para ficar de fora — nos conte
+              qual você usa e avaliamos o que dá para automatizar nele.
+            </p>
+            <Button variant="hero" size="lg" className="group" asChild>
+              <a
+                href={whatsappUrl(
+                  "Olá! Uso outro ERP e quero saber se o HubBot integra com ele."
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Falar sobre o meu ERP
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -13,6 +13,8 @@
 
 ## Integrações (o que a IA executa de verdade)
 
+As integrações abaixo já estão prontas. Se o provedor usa outro ERP, a integração é desenvolvida sob demanda — o sistema de gestão do cliente não é impedimento para usar o HubBot.
+
 - **IXC:** consulta de cliente, faturas em aberto, 2ª via com link, linha digitável e PIX, verificação de bloqueio e conexão, desbloqueio de confiança e liberação da redução de velocidade.
 - **SGP / TSMX:** consulta de cliente, plano e situação do contrato, faturas e PIX, verificação de contrato suspenso e liberação em confiança.
 - **MK Solutions:** consulta de cliente e situação, verificação de bloqueio da conexão e o motivo, desbloqueio em confiança e retirada da redução de velocidade. Inclui acesso somente leitura ao banco de dados como fonte de dados.
@@ -43,6 +45,7 @@
 
 - **Executa, não só informa:** conectada ao ERP, a IA resolve a solicitação em vez de prometer retorno.
 - **Especializada em telecom:** os agentes, o vocabulário, os ciclos de vida e os fluxos já nascem para operação de provedor.
+- **Integra com o ERP que o cliente já tem:** além das integrações prontas, novas são desenvolvidas sob demanda para o sistema de gestão do provedor.
 - **Reversível:** agentes versionados e workflows que se publicam e pausam com um clique.
 - **Sob controle do cliente:** cada ferramenta que a IA pode usar é habilitada manualmente.
 - **Disponível 24 horas por dia, 7 dias por semana**, inclusive finais de semana e feriados.

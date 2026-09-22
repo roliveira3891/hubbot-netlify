@@ -20,7 +20,7 @@ import { whatsappUrl } from "@/lib/contact";
 export const metadata = createMetadata({
   title: "A plataforma por dentro | Produto",
   description:
-    "Workflows visuais, time de agentes de IA, inbox omnicanal, campanhas de WhatsApp, relatórios e integração com IXC, SGP, MK Solutions, Hubsoft e Zabbix. Veja como o HubBot funciona por dentro.",
+    "Workflows visuais, time de agentes de IA, inbox omnicanal, campanhas de WhatsApp, relatórios e integração com IXC, SGP, MK Solutions, Hubsoft, Zabbix e outros. Veja como o HubBot funciona por dentro.",
   keywords: [
     "plataforma de atendimento com IA",
     "workflows de atendimento",

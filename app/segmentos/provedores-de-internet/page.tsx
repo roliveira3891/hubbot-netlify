@@ -81,7 +81,7 @@ const comoFunciona = [
     icon: Plug,
     title: "Conecte canais e ERP",
     description:
-      "WhatsApp, Instagram, Telegram, Facebook e chat do site entram numa caixa de entrada só — e o HubBot se conecta ao IXC, SGP, MK Solutions, Hubsoft ou Zabbix que você já usa.",
+      "WhatsApp, Instagram, Telegram, Facebook e chat do site entram numa caixa de entrada só — e o HubBot se conecta ao IXC, SGP, MK Solutions, Hubsoft ou Zabbix que você já usa. Usa outro ERP? A gente desenvolve a integração.",
   },
   {
     icon: Wifi,

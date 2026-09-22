@@ -8,10 +8,10 @@ import { whatsappUrl } from "@/lib/contact";
 import Link from "next/link";
 
 const trustItems = [
-  "Setup completo em até 24h",
+  "Fluxos e agentes prontos para provedor",
   "Sem fidelidade ou multa de cancelamento",
   "Suporte dedicado para provedores",
-  "Trial gratuito disponível",
+  "Integração com o ERP que você já usa",
 ];
 
 const CTA = () => {
@@ -27,16 +27,16 @@ const CTA = () => {
 
           {/* Headline */}
           <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Sua operação está pronta para a
+            Quantos atendimentos de 2ª via
             <br />
-            <span className="text-gradient">próxima geração do atendimento?</span>
+            <span className="text-gradient">sua equipe fez hoje?</span>
           </h2>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Veja como provedores estão unificando atendimento, vendas e suporte em
-            uma única plataforma com IA — reduzindo custo e respondendo em
-            segundos, 24h por dia.
+            Mostramos, na sua operação, o que a IA já resolveria sozinha no seu
+            ERP — e o que sobraria para o time. Uma conversa de 30 minutos, sem
+            compromisso.
           </p>
 
           {/* CTA Buttons */}

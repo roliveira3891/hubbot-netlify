@@ -1,37 +1,61 @@
 # HubBot
 
-> HubBot é a plataforma de atendimento com agentes de Inteligência Artificial para provedores de internet (ISPs), revendas de telecom e empresas de TV por assinatura. A IA atende, vende e dá suporte 24/7 em WhatsApp, Instagram, Telegram, chat web e voz, reduzindo custos de atendimento em até 70% e transferindo para a equipe humana apenas o que precisa de atenção.
+> HubBot é a plataforma de atendimento com agentes de Inteligência Artificial para provedores de internet (ISPs), revendas de telecom e empresas de TV por assinatura. O diferencial é a integração direta com o ERP do provedor: a IA não apenas responde — ela emite a 2ª via da fatura com PIX, libera o desbloqueio de confiança, retira a redução de velocidade por atraso e consulta o sinal da ONU no monitoramento, tudo durante a própria conversa. O que precisa de gente é encaminhado para a equipe certa, com o contexto completo.
 
 ## Sobre o HubBot
 
-- **O que é:** plataforma omnicanal de atendimento com agentes de IA especializados na realidade de telecom.
+- **O que é:** plataforma omnicanal de atendimento com agentes de IA e workflows visuais, integrada aos ERPs usados por provedores.
 - **Para quem:** provedores de internet, revendas de telecom e empresas de TV por assinatura no Brasil.
 - **Idioma:** Português do Brasil (pt-BR).
 - **Marca de:** Fabrica de Soluções.
 - **Contato:** suporte@hubbot.io
+- **Aplicação:** https://app.hubbot.io
+
+## Integrações (o que a IA executa de verdade)
+
+- **IXC:** consulta de cliente, faturas em aberto, 2ª via com link, linha digitável e PIX, verificação de bloqueio e conexão, desbloqueio de confiança e liberação da redução de velocidade.
+- **SGP / TSMX:** consulta de cliente, plano e situação do contrato, faturas e PIX, verificação de contrato suspenso e liberação em confiança.
+- **MK Solutions:** consulta de cliente e situação, verificação de bloqueio da conexão e o motivo, desbloqueio em confiança e retirada da redução de velocidade. Inclui acesso somente leitura ao banco de dados como fonte de dados.
+- **Hubsoft:** consulta de cliente, plano, endereço e conexão, faturas e PIX, verificação de serviço suspenso e desbloqueio de confiança.
+- **Zabbix:** sinal e status da ONU, para diagnosticar conexão antes de abrir chamado ou enviar técnico.
+- **Ligue Talk:** o cliente aperta 2 na ligação e o atendimento continua no WhatsApp.
+- **Google Agenda:** verificação de disponibilidade e criação de evento com convite, feitas pela IA no atendimento.
+- **Meta (Click-to-WhatsApp):** rastreamento de anúncios, atribuição e envio de conversões.
+- **Consulta de CPF e de CEP:** dados cadastrais e endereço, sem depender de integração com ERP.
 
 ## Principais recursos
 
-- **Inbox omnicanal:** WhatsApp, Instagram, Telegram, chat web e voz em uma única fila, com histórico completo do cliente.
-- **Agentes de IA configuráveis:** múltiplos agentes (suporte técnico, vendas, recepção, cobrança), cada um com tom e escopo definidos pela empresa.
-- **Base de conhecimento (RAG):** a IA responde com base nos planos, cobertura, políticas e documentos da própria empresa — não em dados genéricos.
-- **Campanhas e disparos:** mensagens segmentadas via WhatsApp com controle de delivery, opt-out e métricas.
-- **NPS automatizado:** pesquisa de satisfação após cada atendimento.
-- **CRM de contatos:** gestão do ciclo de vida do cliente (prospecção, ativação, retenção, churn).
-- **Analytics em tempo real:** tempo de resposta, taxa de resolução por IA, performance por agente e funil de conversão.
-- **Handoff IA→humano:** transferência configurável da IA para a equipe, com supervisão gerencial.
+- **Workflows visuais:** canvas de arrastar com gatilho (conversa aberta, resposta de campanha, anúncio, inatividade, encerramento), condições (canal, horário, status da conversa, tag, campo do contato, quem mandou a última mensagem) e passos (enviar mensagem, fazer pergunta, ramificar, esperar, escalar, atribuir time, chamar um serviço de integração). Publica ou pausa com um clique e guarda histórico de execuções.
+- **Modelos de workflow prontos:** atendimento completo para provedor com IXC, menu de atendimento sem IA, atendimento com IA usando agentes prontos, lembrete de vencimento, cobrança de fatura vencida, encerramento por inatividade, pesquisa de NPS, boas-vindas por canal, equipe no horário e IA fora do horário, e fluxos para anúncios Click-to-WhatsApp.
+- **Time de agentes de IA pronto:** ao escolher o ramo "Provedor de internet / telecom", o sistema cria um Roteador (que lê a intenção e distribui) e os especialistas Recepção, Financeiro, Suporte Técnico, Vendas e Retenção, cada um com instruções e escopo próprios. Nada entra no ar antes da revisão do cliente.
+- **Versionamento de agentes:** cada conjunto de agentes é uma versão; é possível publicar uma nova e voltar para a anterior a qualquer momento, sem perder nada.
+- **Controle de ferramentas por agente:** escalar para humano, encerrar atendimento, atualizar dados do contato, gerenciar ciclo de vida e tags, criar agendamento, detectar opt-out, responder em áudio — cada uma ligada ou desligada pelo cliente.
+- **Inbox omnicanal:** WhatsApp, Instagram, Telegram, Facebook e chat do site em uma fila única, com status, atribuição por time e histórico completo do contato em qualquer canal.
+- **Chamada por WhatsApp:** ligação para o cliente com pedido de permissão e fila de chamadas prontas para o atendente.
+- **Campanhas de WhatsApp:** templates aprovados, WhatsApp Flows, mensagens interativas, QR Code e link de entrada, opt-out automático detectado pela IA e entrada de leads.
+- **Base de conhecimento (RAG):** a IA responde com base nos planos, cobertura, políticas e documentos da própria empresa — e escala para humano quando não sabe, em vez de inventar.
+- **CRM de contatos:** ciclo de vida e tags atualizados pela IA durante a conversa, campos de contato personalizados e histórico de interações.
+- **Agenda:** agendamento de retirada de equipamento, instalação e visita técnica, criado pela IA em grupos de agenda.
+- **Relatórios:** Qualidade (NPS, tempo médio de atendimento e de espera por atendente), Produtividade (encerrados pela IA, por humanos e escalonados), Insights (a IA classifica interesse, motivo e resultado das conversas encerradas), NPS, resultado das campanhas de WhatsApp e atribuição de anúncios.
+- **Times e encaminhamento:** membros, times e regras de handoff da IA para o humano.
 
 ## Diferenciais
 
-- Especializado em telecom: a IA entende o contexto de provedores de internet, não é um chatbot genérico.
-- Disponível 24 horas por dia, 7 dias por semana.
-- Redução de custos de atendimento de até 70%.
-- Respostas baseadas no conteúdo real da empresa, evitando informações inventadas.
+- **Executa, não só informa:** conectada ao ERP, a IA resolve a solicitação em vez de prometer retorno.
+- **Especializada em telecom:** os agentes, o vocabulário, os ciclos de vida e os fluxos já nascem para operação de provedor.
+- **Reversível:** agentes versionados e workflows que se publicam e pausam com um clique.
+- **Sob controle do cliente:** cada ferramenta que a IA pode usar é habilitada manualmente.
+- **Disponível 24 horas por dia, 7 dias por semana**, inclusive finais de semana e feriados.
 
 ## Páginas
 
-- [Início](https://hubbot.io/): visão geral da plataforma de IA para provedores e telecom.
-- [Produto](https://hubbot.io/produto): agentes de IA, caixa de entrada unificada, workflows, analytics e integrações.
+- [Início](https://hubbot.io/): visão geral da plataforma, workflows, agentes de IA e integrações com ERP.
+- [Produto](https://hubbot.io/produto): workflows, agentes de IA, conversas, integrações, campanhas e relatórios, com as telas reais do sistema.
 - [Segmentos](https://hubbot.io/segmentos): aplicações por segmento de mercado.
+- [Provedores de Internet](https://hubbot.io/segmentos/provedores-de-internet): atendimento e vendas para ISPs.
+- [Revendas de Telecom](https://hubbot.io/segmentos/revendas-de-telecom): atendimento para revendas.
+- [Cobrança e 2ª Via](https://hubbot.io/solucoes/cobranca-e-segunda-via): 2ª via com PIX, lembrete de vencimento e cobrança automatizada.
+- [Suporte Técnico Automatizado](https://hubbot.io/solucoes/suporte-tecnico-automatizado): diagnóstico de conexão, sinal da ONU e redução de visitas técnicas.
+- [Qualidade no Atendimento](https://hubbot.io/solucoes/qualidade-no-atendimento): NPS, relatórios de qualidade e insights de conversa.
 - [Política de Privacidade](https://hubbot.io/politica-de-privacidade)
 - [Termos de Serviço](https://hubbot.io/termos-de-servico)

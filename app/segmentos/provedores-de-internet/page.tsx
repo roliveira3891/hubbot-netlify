@@ -68,32 +68,32 @@ const dores = [
 ];
 
 const recursos = [
-  "Suporte nível 1 resolvido pela IA, sem fila",
-  "Venda de planos com consulta de cobertura",
-  "Segunda via de boleto e Pix na conversa",
-  "Avisos proativos de massiva e manutenção",
-  "Integração com o sistema de gestão do provedor",
-  "Transbordo com contexto para a equipe humana",
+  "2ª via com link, linha digitável e PIX emitida no IXC, SGP ou Hubsoft",
+  "Desbloqueio de confiança e retirada da redução de velocidade",
+  "Diagnóstico de conexão com o sinal da ONU consultado no Zabbix",
+  "Venda de planos com consulta de cobertura por endereço",
+  "Workflows visuais para definir quem atende o quê, e quando escalar",
+  "Transbordo com contexto completo para a equipe humana",
 ];
 
 const comoFunciona = [
   {
     icon: Plug,
-    title: "Conecte seus canais",
+    title: "Conecte canais e ERP",
     description:
-      "WhatsApp, Instagram, Telegram e chat do site entram numa única caixa de entrada. Setup em 24 horas, sem trocar de sistema.",
+      "WhatsApp, Instagram, Telegram, Facebook e chat do site entram numa caixa de entrada só — e o HubBot se conecta ao IXC, SGP, MK Solutions, Hubsoft ou Zabbix que você já usa.",
   },
   {
     icon: Wifi,
-    title: "Treine a IA com a sua operação",
+    title: "Monte o time de IA e o fluxo",
     description:
-      "Planos, cobertura, políticas e procedimentos do seu provedor viram a base de conhecimento do agente — ele responde com seus dados reais.",
+      "Escolha o ramo e o HubBot cria o roteador e os especialistas de Financeiro, Suporte, Vendas, Retenção e Recepção. Depois você desenha no workflow quem atende o quê.",
   },
   {
     icon: Zap,
-    title: "A IA resolve o repetitivo",
+    title: "A IA resolve o repetitivo de verdade",
     description:
-      "Suporte básico, segunda via, dúvidas de planos e avisos de massiva são resolvidos na hora, 24 horas por dia, sem fila.",
+      "Emite a 2ª via com PIX, libera o desbloqueio de confiança, retira a redução de velocidade e checa o sinal da ONU — 24 horas por dia, sem fila.",
   },
   {
     icon: Headset,
@@ -113,7 +113,7 @@ const faqItems = [
   {
     question: "O que a IA do HubBot resolve no SAC de um provedor de internet?",
     answer:
-      "A IA resolve sozinha o atendimento de nível 1: dúvidas sobre planos e cobertura, segunda via de boleto, suporte básico de conexão, avisos de massiva e manutenção, e qualificação de novos assinantes. Os casos que exigem atenção humana são transferidos para a equipe com todo o contexto da conversa.",
+      "A IA resolve sozinha, direto no seu ERP: 2ª via da fatura com link, linha digitável e PIX, consulta de faturas em aberto, verificação de bloqueio, desbloqueio de confiança, retirada da redução de velocidade por atraso e diagnóstico de conexão com o sinal da ONU consultado no Zabbix. Também atende dúvidas sobre planos e cobertura e qualifica novos assinantes. O que exige atenção humana é transferido para a equipe com todo o contexto da conversa.",
   },
   {
     question: "Quanto um provedor economiza automatizando o atendimento?",
@@ -121,14 +121,14 @@ const faqItems = [
       "Provedores que usam o HubBot reduzem em até 70% os custos de atendimento, porque a IA absorve o volume repetitivo que antes ocupava a maior parte da equipe — sem precisar contratar mais atendentes conforme a base de assinantes cresce.",
   },
   {
-    question: "A IA funciona durante uma massiva (queda em massa)?",
+    question: "A IA ajuda durante uma massiva (queda em massa)?",
     answer:
-      "Sim, e é quando ela mais ajuda. Durante uma massiva, a IA informa automaticamente os clientes da região afetada sobre o problema e a previsão de retorno, segurando a explosão de chamados enquanto a equipe técnica foca em resolver a falha.",
+      "Sim. Você dispara uma campanha de WhatsApp para os clientes afetados avisando do problema e da previsão de retorno, e ajusta o workflow de atendimento para responder quem chamar sobre o assunto. A IA segura o volume de chamados repetidos enquanto a equipe técnica foca em resolver a falha, e as respostas dos clientes caem na mesma fila de atendimento.",
   },
   {
     question: "O HubBot integra com o sistema de gestão do meu provedor?",
     answer:
-      "Sim. O HubBot oferece integrações com sistemas de gestão e CRMs usados por provedores, permitindo que a IA consulte dados reais — como faturas, planos e status de conexão — durante o atendimento.",
+      "Sim. O HubBot integra com IXC, SGP/TSMX, MK Solutions e Hubsoft para consultar cliente, plano, faturas e status da conexão — e para executar ações como emitir a 2ª via com PIX, liberar o desbloqueio de confiança e retirar a redução de velocidade. Também integra com o Zabbix (sinal e status da ONU), Ligue Talk (telefonia), Google Agenda e com a Meta para rastrear conversões de anúncios Click-to-WhatsApp.",
   },
   {
     question: "A IA consegue vender planos de internet sozinha?",
@@ -182,7 +182,7 @@ export default function ProvedoresDeInternetPage() {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Agentes de IA treinados para a realidade do ISP resolvem o
-              suporte repetitivo, vendem planos e avisam massivas — enquanto
+              suporte repetitivo no seu próprio ERP e vendem planos — enquanto
               sua equipe foca no que precisa de gente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

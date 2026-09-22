@@ -1,94 +1,126 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle, ChevronRight, Cpu, Brain, Zap } from "lucide-react";
+import { CheckCircle, ChevronRight, Cpu, History, Sparkles } from "lucide-react";
 
+// O time que o HubBot monta sozinho quando você escolhe o ramo
+// "Provedor de internet / telecom" em Agentes de IA.
 const agentTypes = [
   {
-    name: "Agente de Suporte",
+    emoji: "🧭",
+    name: "Roteador",
     description:
-      "Resolve chamados técnicos, coleta sintomas, abre tickets e escalona para NOC quando necessário.",
-    useCases: ["Quedas de sinal", "Lentidão de internet", "Dúvidas de configuração"],
+      "Lê cada mensagem, entende a intenção e entrega a conversa para o especialista certo. É ele que faz o atendimento parecer um só.",
+    useCases: ["Classificação de intenção", "Direcionamento automático"],
   },
   {
-    name: "Agente de Vendas",
+    emoji: "👋",
+    name: "Recepção",
     description:
-      "Qualifica leads, apresenta planos, verifica cobertura e encaminha para o closer no momento certo.",
-    useCases: ["Consulta de planos", "Verificação de endereço", "Upgrade de velocidade"],
+      "Recebe o cliente, identifica quem é pelo CPF/CNPJ e encaminha para o setor certo. Só triagem — não inventa resposta de especialista.",
+    useCases: ["Identificação do cliente", "Triagem do primeiro contato"],
   },
   {
-    name: "Agente de Cobrança",
+    emoji: "💳",
+    name: "Financeiro",
     description:
-      "Envia boletos, informa vencimentos, negocia débitos e agenda reagendamento de instalação.",
-    useCases: ["2ª via de fatura", "Negociação de dívida", "Suspensão por inadimplência"],
+      "Fatura, 2ª via, PIX, boleto, comprovante de pagamento, conexão bloqueada por inadimplência e pedido de prazo.",
+    useCases: ["2ª via com PIX", "Desbloqueio de confiança", "Negociação de prazo"],
   },
   {
-    name: "Agente de Recepção",
+    emoji: "🛠️",
+    name: "Suporte Técnico",
     description:
-      "Triagem inteligente que entende a intenção do cliente e direciona para o agente certo desde o primeiro contato.",
-    useCases: ["Direcionamento de canal", "Coleta inicial de dados", "Agendamento de visita técnica"],
+      "Sem conexão, lentidão, oscilação, Wi-Fi e equipamento. Faz o diagnóstico guiado antes de abrir chamado para o time.",
+    useCases: ["Diagnóstico guiado", "Sinal da ONU", "Abertura de chamado"],
+  },
+  {
+    emoji: "🎯",
+    name: "Vendas",
+    description:
+      "Planos, preços, cobertura no endereço, upgrade de velocidade e mudança de endereço. Qualifica e passa o lead pronto.",
+    useCases: ["Consulta de cobertura", "Upgrade de plano", "Qualificação"],
+  },
+  {
+    emoji: "🔄",
+    name: "Retenção",
+    description:
+      "Cancelamento, reativação de contrato e devolução ou retirada de equipamento. Entra antes de o cliente ir embora.",
+    useCases: ["Pedido de cancelamento", "Reativação", "Retirada de equipamento"],
   },
 ];
 
 const capabilities = [
-  "Treinado com os planos e coberturas do seu provedor",
-  "Responde em português natural, sem parecer robô",
-  "Verifica cobertura por endereço em tempo real",
-  "Integra com o ERP do seu provedor via API (MK, Hubsoft, IXC, SGP)",
-  "Transfere para humano com contexto completo da conversa",
-  "Aprende com feedbacks e melhora com o tempo",
+  "Sobe pronto: escolha o ramo e o time de agentes nasce com prompts que já funcionam",
+  "Cada agente tem as próprias instruções, escopo e ferramentas — você edita tudo",
+  "Consulta o ERP na hora da conversa e executa de verdade (não só informa)",
+  "Responde com base nos seus documentos e planos, não em dado genérico",
+  "Atualiza ciclo de vida e tags do contato sozinho, enquanto conversa",
+  "Escala para humano com o contexto inteiro, quando o cliente pede ou se frustra",
+  "Transcreve o áudio do cliente e responde em áudio quando ele pedir",
 ];
 
 const AIAgents = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background */}
+    <section id="agentes" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl opacity-20" />
 
       <div className="container mx-auto px-4 relative z-10">
-
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Cpu className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">
-              Agentes de IA
-            </span>
+            <span className="text-sm font-medium text-primary">Agentes de IA</span>
           </div>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            IA especializada em telecom —
+            Um time de IA inteiro no ar —
             <br />
-            <span className="text-gradient">não um chatbot genérico</span>
+            <span className="text-gradient">montado em minutos, não em meses</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Cada agente do HubBot é treinado com o contexto do seu provedor:
-            planos, coberturas, políticas e processos. Você configura, a IA
-            executa com consistência e escala.
+            Você informa o nome da empresa, escolhe &ldquo;Provedor de internet /
+            telecom&rdquo; e o HubBot monta o time completo: um roteador e cinco
+            especialistas, cada um com as instruções que já funcionam nesse tipo
+            de operação. Nada entra no ar antes de você revisar.
           </p>
         </div>
 
+        {/* Organograma real do app */}
+        <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden max-w-6xl mx-auto mb-16">
+          <Image
+            src="/assets/app-agentes-time.png"
+            alt="Organograma de agentes de IA do HubBot: um roteador distribuindo para Recepção, Financeiro, Suporte Técnico, Vendas e Retenção"
+            width={1408}
+            height={708}
+            sizes="(max-width: 1024px) 100vw, 1100px"
+            quality={90}
+            className="w-full h-auto"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
+        </div>
+
         {/* Agent Types Grid */}
-        <div className="grid md:grid-cols-2 gap-5 mb-16 max-w-4xl mx-auto">
-          {agentTypes.map((agent, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-20 max-w-6xl mx-auto">
+          {agentTypes.map((agent) => (
             <div
-              key={index}
+              key={agent.name}
               className="p-6 rounded-2xl glass border border-border hover:border-primary/30 transition-colors"
             >
               <div className="flex items-start gap-3 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                  <Brain className="w-4 h-4 text-primary-foreground" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 text-lg">
+                  <span aria-hidden="true">{agent.emoji}</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">{agent.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
                     {agent.description}
                   </p>
                 </div>
               </div>
-              <div className="space-y-1.5 mt-4 pl-12">
-                {agent.useCases.map((uc, i) => (
-                  <div key={i} className="flex items-center gap-2">
+              <div className="space-y-1.5 mt-4 pl-[52px]">
+                {agent.useCases.map((uc) => (
+                  <div key={uc} className="flex items-center gap-2">
                     <ChevronRight className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                     <span className="text-xs text-muted-foreground">{uc}</span>
                   </div>
@@ -98,55 +130,71 @@ const AIAgents = () => {
           ))}
         </div>
 
-        {/* Capabilities + Screenshot */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Zap className="w-5 h-5 text-primary" />
-              <h3 className="font-heading text-xl font-semibold text-foreground">
-                O que cada agente é capaz de fazer
-              </h3>
-            </div>
-            <div className="space-y-3">
-              {capabilities.map((cap, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-foreground text-sm">{cap}</p>
-                </div>
-              ))}
-            </div>
+        {/* Capabilities */}
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <Sparkles className="w-5 h-5 text-primary" />
+            <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground">
+              O que muda em relação a um chatbot
+            </h3>
           </div>
-
-          <div className="relative">
-            <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
-              <Image
-                src="/assets/ai-builder-mockup.png"
-                alt="HubBot — Editor de agentes de IA"
-                width={1888}
-                height={916}
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
-            </div>
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+            {capabilities.map((cap) => (
+              <div key={cap} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                <p className="text-foreground text-sm leading-relaxed">{cap}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
-          {[
-            { value: "< 1 min", label: "Tempo médio de primeira resposta" },
-            { value: "até 70%", label: "Resoluções sem intervenção humana" },
-            { value: "4+", label: "Tipos de agente disponíveis" },
-            { value: "24/7", label: "Disponibilidade garantida" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center p-6 rounded-2xl glass">
-              <p className="font-heading text-3xl font-bold text-gradient mb-1">
-                {stat.value}
-              </p>
-              <p className="text-xs text-muted-foreground">{stat.label}</p>
+        {/* Você controla cada ferramenta */}
+        <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden max-w-6xl mx-auto mb-20">
+          <Image
+            src="/assets/app-agente-ferramentas.png"
+            alt="Configuração de um agente de IA do HubBot, com as ferramentas e automações que ele pode usar"
+            width={1408}
+            height={708}
+            sizes="(max-width: 1024px) 100vw, 1100px"
+            quality={90}
+            className="w-full h-auto"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
+        </div>
+
+        {/* Versionamento */}
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="flex items-center justify-center gap-2 mb-5">
+              <History className="w-5 h-5 text-primary" />
+              <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground">
+                Mexer na IA sem medo de quebrar o atendimento
+              </h3>
             </div>
-          ))}
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Cada conjunto de agentes é uma versão: as instruções, os
+              especialistas e quem responde cada canal. Você testa uma mudança,
+              publica e, se não gostar, volta para a versão anterior a qualquer
+              momento — nada é apagado.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              É a diferença entre ajustar o tom do seu atendimento numa
+              terça-feira à tarde e ter medo de encostar no sistema.
+            </p>
+          </div>
+
+          <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
+            <Image
+              src="/assets/app-agente-prompt.png"
+              alt="Editor de instruções de um agente de IA do HubBot, com o prompt do agente Financeiro"
+              width={1408}
+              height={708}
+              sizes="(max-width: 1024px) 100vw, 1100px"
+              quality={90}
+              className="w-full h-auto"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
+          </div>
         </div>
       </div>
     </section>

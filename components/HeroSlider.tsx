@@ -7,11 +7,12 @@ const DURATION = 4000;
 const FADE_MS  = 600;
 
 const slides = [
-  { src: "/assets/screen-conversas.png",  alt: "Tela de conversas unificadas do HubBot" },
-  { src: "/assets/screen-dashboard.png",  alt: "Dashboard de métricas do HubBot"        },
-  { src: "/assets/screen-agentes.png",    alt: "Editor de agentes de IA do HubBot"       },
-  { src: "/assets/screen-campanhas.png",  alt: "Gestão de campanhas do HubBot"           },
-  { src: "/assets/screen-nps.png",        alt: "Relatório de NPS do HubBot"              },
+  { src: "/assets/app-workflow-editor.png",   alt: "Editor de workflows do HubBot"                 },
+  { src: "/assets/app-agentes-time.png",      alt: "Time de agentes de IA do HubBot"               },
+  { src: "/assets/app-conversas.png",         alt: "Tela de conversas unificadas do HubBot"        },
+  { src: "/assets/app-integracoes-erp.png",   alt: "Integrações com ERPs de provedor no HubBot"    },
+  { src: "/assets/screen-dashboard.png",      alt: "Dashboard de métricas do HubBot"               },
+  { src: "/assets/screen-nps.png",            alt: "Relatório de NPS do HubBot"                    },
 ];
 
 export function HeroSlider() {
@@ -53,7 +54,7 @@ export function HeroSlider() {
       `}</style>
 
       {/* aspect-ratio reserva a altura sem precisar de uma imagem "âncora" extra */}
-      <div className="hb-float relative aspect-[1888/916] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
+      <div className="hb-float relative aspect-[1408/708] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
 
         {slides.map((slide, i) => (
           <div

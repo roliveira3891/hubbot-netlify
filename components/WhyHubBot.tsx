@@ -11,85 +11,87 @@ import {
   MessageSquareOff,
   TrendingDown,
   BellOff,
-  GitFork,
+  PhoneOff,
 } from "lucide-react";
 
 const painPoints = [
   {
-    icon: Layers,
-    title: "Ferramentas que não conversam entre si",
-    text: "WhatsApp pessoal, grupos de vendedores, CRM separado, planilhas no Drive. Cada ferramenta cria um silo — ninguém tem visão completa do cliente.",
-  },
-  {
-    icon: EyeOff,
-    title: "Zero visibilidade de funil",
-    text: "Quantos leads abertos agora? Qual é o tempo médio de resposta? Taxa de conversão real por canal? Sem plataforma, essas perguntas ficam sem resposta.",
-  },
-  {
-    icon: UserX,
-    title: "Crescimento que depende de headcount",
-    text: "Mais volume de atendimento significa contratar mais. Sem automação, não há ganho de eficiência — só custo operacional crescendo junto com a receita.",
+    icon: BellOff,
+    title: "O cliente cai às 22h e ninguém responde",
+    text: "Fim de semana, feriado, madrugada. Ou você paga plantão, ou o cliente fica olhando para a mensagem sem resposta — e abre reclamação na Anatel.",
   },
   {
     icon: Timer,
-    title: "Atendimento sem padrão nem SLA",
-    text: "Cada atendente responde do jeito que acha certo, quando tem tempo. Sem monitoramento, sem melhora contínua, sem base para cobrar resultado.",
+    title: "Fila que só cresce com o repetitivo",
+    text: "2ª via, dúvida de vencimento, internet bloqueada, 'está lento aqui'. É a maior parte do volume e é sempre a mesma coisa — consumindo o dia do seu time.",
+  },
+  {
+    icon: UserX,
+    title: "Crescer significa contratar mais gente",
+    text: "Mais assinantes, mais atendentes. Sem automação não existe ganho de escala: o custo de atendimento sobe na mesma proporção da receita.",
+  },
+  {
+    icon: Layers,
+    title: "WhatsApp no celular do vendedor",
+    text: "O histórico do cliente mora no aparelho de quem atendeu. Quando a pessoa sai, o relacionamento vai junto e o cliente volta à estaca zero.",
   },
   {
     icon: MessageSquareOff,
-    title: "Leads que somem sem follow-up",
-    text: "O cliente perguntou, o vendedor não respondeu a tempo, o cliente foi embora. Sem automação de follow-up, cada lead esquecido é receita que não entrou.",
+    title: "Lead que perguntou e nunca foi respondido",
+    text: "O anúncio rodou, o cliente chamou, ninguém viu a tempo. Sem regra de follow-up, cada lead esquecido é dinheiro de mídia jogado fora.",
   },
   {
-    icon: BellOff,
-    title: "Suporte que não dorme, equipe que sim",
-    text: "Chamados chegam às 22h, aos domingos, em feriados. Sem IA, ou você paga plantão ou o cliente fica sem resposta — e vai para o concorrente.",
+    icon: PhoneOff,
+    title: "Visita técnica que não precisava existir",
+    text: "Chamado aberto sem ninguém checar o sinal da ONU antes. Técnico na rua, custo de deslocamento — e o problema era fibra suja.",
+  },
+  {
+    icon: EyeOff,
+    title: "Você não sabe o tamanho do próprio SAC",
+    text: "Quantos atendimentos hoje? Quanto tempo o cliente espera? Qual atendente resolve mais? Sem dado, não dá para cobrar nem para melhorar.",
   },
   {
     icon: TrendingDown,
-    title: "Churn silencioso que ninguém monitora",
-    text: "Clientes insatisfeitos saem sem aviso. Sem NPS, sem pesquisa pós-atendimento, você só descobre quando o cancelamento já chegou.",
-  },
-  {
-    icon: GitFork,
-    title: "Histórico do cliente que fica no celular do vendedor",
-    text: "Quando o funcionário sai, o histórico vai junto. Sem plataforma centralizada, cada atendente carrega o relacionamento consigo — e o cliente volta à estaca zero.",
+    title: "Churn que aparece só no cancelamento",
+    text: "O cliente já estava insatisfeito há meses. Sem NPS e sem leitura do que as conversas dizem, você descobre quando não dá mais para reverter.",
   },
 ];
 
 const useCases = [
-  "Segunda via de fatura",
-  "Informações financeiras",
-  "Suporte técnico de 1º nível",
-  "Acompanhamento de protocolos",
-  "Qualificação de novos clientes",
-  "Encaminhamento para a equipe certa",
+  "2ª via com PIX",
+  "Faturas em aberto",
+  "Desbloqueio de confiança",
+  "Liberar redução de velocidade",
+  "Diagnóstico de internet lenta",
+  "Sinal da ONU",
+  "Cobertura no endereço",
+  "Agendamento de visita",
 ];
 
 const howItWorks = [
   {
     step: "01",
     icon: Inbox,
-    title: "Todos os canais, uma inbox",
-    text: "WhatsApp, Telegram, Instagram e chat web chegam em uma única fila com histórico completo de cada cliente.",
+    title: "Tudo cai no mesmo lugar",
+    text: "WhatsApp, Instagram, Telegram, Facebook e chat do site entram numa fila só, com o histórico completo do cliente em qualquer canal.",
   },
   {
     step: "02",
     icon: Bot,
-    title: "IA processa o volume",
-    text: "Agentes de IA atendem, classificam e resolvem automaticamente. Escalando para humano apenas quando necessário.",
+    title: "A IA resolve o repetitivo de verdade",
+    text: "Ela consulta o seu ERP, emite a 2ª via, libera o desbloqueio e faz o diagnóstico. Não é 'vou verificar' — é resolvido na conversa.",
   },
   {
     step: "03",
     icon: Users,
-    title: "Equipe organizada e produtiva",
-    text: "Cada atendente foca nas conversas que realmente precisam de atenção. Nada cai no limbo, nenhum lead esquecido.",
+    title: "A equipe pega só o que importa",
+    text: "O que exige humano chega com o contexto inteiro e vai para o time certo, pela regra que você desenhou no workflow.",
   },
   {
     step: "04",
     icon: BarChart3,
-    title: "Visibilidade e decisão em tempo real",
-    text: "Funil de conversão, SLA por canal, performance por agente — tudo visível no dashboard sem extrações manuais.",
+    title: "Você enxerga a operação",
+    text: "Tempo de espera, tempo de atendimento, quanto a IA encerrou sozinha, NPS por atendente e o que os clientes mais procuram.",
   },
 ];
 
@@ -100,29 +102,30 @@ const WhyHubBot = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-
           {/* Problema */}
           <div className="text-center mb-16">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
               O Problema
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
-              Por que o atendimento de provedores
+              O seu atendimento não está caro
               <br />
-              ainda não{" "}
-              <span className="text-gradient">escala com eficiência</span>
+              porque tem muita gente.{" "}
+              <span className="text-gradient">
+                Está caro porque faz tudo na mão.
+              </span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-              A maioria dos provedores cresce o atendimento da mesma forma que
-              crescia há 10 anos — contratando mais pessoas, gerenciando mais
-              grupos. O resultado é previsível: custo alto, qualidade
-              inconsistente e dados inexistentes.
+              A maior parte do que chega no seu WhatsApp é consulta de fatura,
+              desbloqueio e &ldquo;minha internet está lenta&rdquo;. Enquanto um
+              humano precisar abrir o ERP para cada uma delas, o custo por
+              assinatura só sobe.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              {painPoints.map((point, index) => (
+              {painPoints.map((point) => (
                 <div
-                  key={index}
+                  key={point.title}
                   className="flex flex-col items-start gap-3 p-5 rounded-xl glass border border-border text-left"
                 >
                   <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center flex-shrink-0">
@@ -148,12 +151,14 @@ const WhyHubBot = () => {
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-4 mb-4">
                 Não é mais um chatbot.
                 <br />
-                <span className="text-gradient">É IA construída para provedores.</span>
+                <span className="text-gradient">
+                  É IA com acesso ao seu ERP.
+                </span>
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Soluções genéricas precisam ser adaptadas ao seu negócio. O HubBot
-                já nasce sabendo como funciona uma operação de telecom — e resolve
-                sozinho solicitações como:
+                Ferramenta genérica precisa ser adaptada ao seu negócio. O HubBot
+                já nasce sabendo como funciona uma operação de provedor — e
+                resolve sozinho, do começo ao fim:
               </p>
 
               <div className="flex flex-wrap justify-center gap-2 mt-6 max-w-3xl mx-auto">
@@ -169,9 +174,9 @@ const WhyHubBot = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
-              {howItWorks.map((item, index) => (
+              {howItWorks.map((item) => (
                 <div
-                  key={index}
+                  key={item.step}
                   className="flex gap-4 p-5 rounded-xl bg-primary/5 border border-primary/20"
                 >
                   <div className="flex-shrink-0">
@@ -184,7 +189,9 @@ const WhyHubBot = () => {
                       <span className="text-xs font-mono text-primary font-bold">
                         {item.step}
                       </span>
-                      <p className="font-semibold text-foreground">{item.title}</p>
+                      <p className="font-semibold text-foreground">
+                        {item.title}
+                      </p>
                     </div>
                     <p className="text-sm text-muted-foreground">{item.text}</p>
                   </div>

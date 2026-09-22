@@ -71,9 +71,11 @@ const recursos = [
   "Resposta em segundos, a qualquer hora do dia",
   "Histórico completo: o cliente nunca repete nada",
   "IA que entende linguagem natural, não menu de opções",
-  "Mesmo atendimento em WhatsApp, Instagram e site",
-  "Transferência para humano na hora certa, com contexto",
-  "Pesquisa de satisfação e NPS após o atendimento",
+  "Mesmo atendimento em WhatsApp, Instagram, Telegram, Facebook e site",
+  "NPS enviado automaticamente ao encerrar, com a nota ligada a quem atendeu",
+  "Relatórios de qualidade e produtividade: TMA, TME e o que a IA encerrou",
+  "Insights: a IA classifica interesse, motivo e resultado de cada conversa",
+  "Workflow que encerra e avisa quando o cliente some no meio do atendimento",
 ];
 
 const comoFunciona = [
@@ -97,9 +99,9 @@ const comoFunciona = [
   },
   {
     icon: Heart,
-    title: "A experiência vira fidelidade",
+    title: "E você passa a medir tudo isso",
     description:
-      "Cliente bem atendido não procura concorrente. Atendimento rápido e resolutivo derruba reclamações e segura o churn.",
+      "NPS automático ao encerrar, tempo médio de espera e de atendimento por pessoa, e a IA classificando o motivo de cada conversa. Qualidade deixa de ser percepção e vira número.",
   },
 ];
 

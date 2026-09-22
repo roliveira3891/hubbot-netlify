@@ -1,28 +1,31 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyHubBot from "@/components/WhyHubBot";
-import Features from "@/components/Features";
-import Integrations from "@/components/Integrations";
+import Workflows from "@/components/Workflows";
 import AIAgents from "@/components/AIAgents";
-import Testimonials from "@/components/Testimonials";
+import Integrations from "@/components/Integrations";
+import Proof from "@/components/Proof";
+import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { createMetadata, createSoftwareApplicationSchema } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "HubBot — Plataforma de Atendimento com IA para Provedores de Internet",
+  title: "HubBot — IA que resolve no ERP do seu provedor de internet",
   description:
-    "HubBot é a plataforma omnicanal com IA para provedores de internet e telecom. Unifique WhatsApp, Telegram, Instagram e chat web. Automatize atendimento, qualifique leads e tenha visibilidade completa do seu funil.",
+    "Plataforma de atendimento com IA para provedores de internet. Integrada ao IXC, SGP, MK Solutions, Hubsoft e Zabbix: emite 2ª via com PIX, libera desbloqueio de confiança e testa o sinal da ONU. WhatsApp, Instagram, Telegram e chat do site numa fila só, com workflows visuais.",
   keywords: [
     "plataforma de atendimento para provedores de internet",
-    "omnichannel para telecom",
-    "agentes de IA para ISP",
+    "IA integrada ao IXC",
+    "chatbot com SGP e MK Solutions",
     "automação de atendimento WhatsApp telecom",
-    "CRM para provedor de internet",
+    "2ª via de fatura automática WhatsApp",
+    "desbloqueio de confiança automático",
+    "workflows de atendimento para ISP",
+    "agentes de IA para provedor de internet",
     "inbox omnicanal telecom",
-    "IA para provedor de internet",
-    "atendimento automatizado provedor",
+    "CRM para provedor de internet",
   ],
   path: "/",
 });
@@ -40,10 +43,11 @@ export default function Home() {
       <main>
         <Hero />
         <WhyHubBot />
-        <Features />
-        <Integrations />
+        <Workflows />
         <AIAgents />
-        <Testimonials />
+        <Integrations />
+        <Proof />
+        <Features />
         <FAQ />
         <CTA />
       </main>

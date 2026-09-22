@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const siteConfig = {
   name: "HubBot",
   title: "HubBot — Agentes de IA para Provedores de Internet e Telecom",
-  description: "HubBot é a plataforma de agentes de IA para provedores de internet, revendas de telecom e empresas de TV por assinatura. Reduza custos em 70%, atenda 24/7 via WhatsApp e automatize seu SAC.",
+  description: "HubBot é a plataforma de atendimento com agentes de IA para provedores de internet, revendas de telecom e empresas de TV por assinatura. Integrada ao IXC, SGP, MK Solutions, Hubsoft e Zabbix: 2ª via com PIX, desbloqueio de confiança e diagnóstico de conexão direto no WhatsApp, 24/7.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://hubbot.io",
   ogImage: "/og-image.jpg",
   author: {
@@ -21,12 +21,16 @@ export const siteConfig = {
     "automação de atendimento telecom",
     "SAC automatizado WhatsApp",
     "IA para provedor de internet",
+    "integração IXC WhatsApp",
+    "integração SGP atendimento",
+    "integração MK Solutions WhatsApp",
+    "integração Hubsoft atendimento",
+    "2ª via de fatura automática no WhatsApp",
+    "desbloqueio de confiança automático",
+    "workflows de atendimento para provedor",
     "atendimento 24/7 telecomunicações",
-    "redução de custos atendimento",
     "inteligência artificial telecomunicações",
     "chatbot WhatsApp Business",
-    "automação SAC",
-    "agentes virtuais",
     "CRM telecomunicações",
   ],
 };

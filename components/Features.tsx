@@ -10,72 +10,96 @@ import {
   BarChart3,
   ShieldCheck,
   CalendarCheck,
+  GitBranch,
+  PhoneCall,
+  Lightbulb,
 } from "lucide-react";
 import { ProductCarousel } from "@/components/ProductCarousel";
 
 const features = [
   {
     icon: Inbox,
-    title: "Inbox Omnicanal",
+    title: "Inbox omnicanal",
     description:
-      "WhatsApp, Telegram, Instagram e chat web em uma única fila de atendimento. Histórico completo do cliente em qualquer canal, sem alternar de aba.",
-    tag: "Multi-canal",
+      "WhatsApp, Instagram, Telegram, Facebook e chat do site numa fila só, com status, atribuição por time e histórico completo do cliente.",
+    tag: "Multicanal",
+  },
+  {
+    icon: GitBranch,
+    title: "Workflows visuais",
+    description:
+      "Gatilho, condição e passo num canvas de arrastar. Define quem atende, o que a IA resolve, quando escalar e para qual time — sem programar.",
+    tag: "Automação",
   },
   {
     icon: Bot,
-    title: "Agentes de IA Configuráveis",
+    title: "Time de agentes de IA",
     description:
-      "Crie múltiplos agentes com funções distintas: suporte técnico, vendas, recepção, cobrança. Cada agente tem personalidade, tom e escopo definidos por você.",
-    tag: "IA Generativa",
+      "Roteador + especialistas de Financeiro, Suporte, Vendas, Retenção e Recepção. Cada um com escopo, tom e ferramentas próprias, versionados.",
+    tag: "IA generativa",
   },
   {
     icon: Database,
-    title: "Base de Conhecimento (RAG)",
+    title: "Base de conhecimento (RAG)",
     description:
-      "Carregue planos, coberturas, políticas, FAQs e documentos da sua empresa. A IA responde baseada no seu conteúdo — não em dados genéricos inventados.",
-    tag: "Treinamento Próprio",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Integração com Google Agenda",
-    description:
-      "Conecte seu Google Agenda para a IA consultar a disponibilidade e agendar compromissos automaticamente durante o atendimento. Os dados do Google Agenda são usados exclusivamente para essa finalidade.",
-    tag: "Agendamento",
+      "Suba planos, cobertura, políticas e documentos internos. A IA responde a partir do seu conteúdo, não de dado genérico inventado.",
+    tag: "Treinamento próprio",
   },
   {
     icon: Megaphone,
-    title: "Campanhas e Disparos",
+    title: "Campanhas de WhatsApp",
     description:
-      "Envie mensagens segmentadas para toda a base ou segmentos específicos via WhatsApp. Controle de delivery, opt-out automático e métricas por campanha.",
+      "Disparo por template aprovado, Flows, mensagens interativas, QR Code e link de entrada, com opt-out automático de quem pede para sair.",
     tag: "Broadcast",
   },
   {
-    icon: Star,
-    title: "NPS Automatizado",
+    icon: Lightbulb,
+    title: "Insights de conversa",
     description:
-      "Pesquisa de satisfação enviada automaticamente após cada atendimento. Identifique detratores, promotores e colete feedback sem esforço manual.",
+      "A IA lê os atendimentos encerrados e classifica interesse, motivo e resultado. Você descobre o que sua base procura sem ler conversa por conversa.",
+    tag: "Análise",
+  },
+  {
+    icon: Star,
+    title: "NPS automático",
+    description:
+      "Pesquisa enviada ao encerrar o atendimento, com nota amarrada a quem conduziu o caso. Promotores, passivos e detratores no relatório.",
     tag: "Satisfação",
   },
   {
     icon: Contact2,
-    title: "CRM de Contatos",
+    title: "CRM de contatos",
     description:
-      "Gestão completa do ciclo de vida do cliente: prospecção, ativação, retenção e churn. Tags, segmentos e histórico de todas as interações por canal.",
+      "Ciclo de vida e tags atualizados pela própria IA durante a conversa, campos personalizados e histórico de toda interação por canal.",
     tag: "CRM",
   },
   {
-    icon: BarChart3,
-    title: "Analytics em Tempo Real",
+    icon: CalendarCheck,
+    title: "Agenda",
     description:
-      "Tempo de primeira resposta, taxa de resolução por IA, performance por agente, volume por canal e funil de conversão — sem exportar planilha.",
+      "Retirada de equipamento, instalação e visita técnica agendadas pela IA no grupo certo — ou integradas ao seu Google Agenda.",
+    tag: "Agendamento",
+  },
+  {
+    icon: PhoneCall,
+    title: "Chamada por WhatsApp",
+    description:
+      "Ligue para o cliente pelo próprio WhatsApp, com pedido de permissão e fila de chamadas prontas para o atendente.",
+    tag: "Voz",
+  },
+  {
+    icon: BarChart3,
+    title: "Relatórios de operação",
+    description:
+      "Qualidade, produtividade, quanto a IA encerrou sozinha, escalonamentos, desempenho por atendente e resultado das campanhas e anúncios.",
     tag: "Métricas",
   },
   {
     icon: ShieldCheck,
-    title: "Supervisão e Handoff IA→Humano",
+    title: "Times e encaminhamento",
     description:
-      "Visão gerencial da fila de atendimento, SLA por conversa e transferência configurável da IA para a equipe. Gerente vê tudo, atendente vê o seu.",
-    tag: "Controle de Equipe",
+      "Membros, times e regras de handoff da IA para o humano. Gerente enxerga a operação inteira, atendente enxerga a fila dele.",
+    tag: "Gestão de equipe",
   },
 ];
 
@@ -95,8 +119,8 @@ const Features = () => {
             <span className="text-gradient">não mais uma ferramenta</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Cada recurso foi construído para o contexto real de provedores de
-            internet — do primeiro contato ao cliente fidelizado.
+            Do primeiro &ldquo;oi&rdquo; no anúncio até o cliente fidelizado — e
+            tudo construído para o contexto real de quem opera um provedor.
           </p>
         </div>
 
@@ -108,17 +132,14 @@ const Features = () => {
               className="group relative rounded-2xl p-6 glass hover:bg-card/70 transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.07}s` }}
             >
-              {/* Tag */}
               <span className="inline-block text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full mb-4">
                 {feature.tag}
               </span>
 
-              {/* Icon */}
               <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 shadow-glow group-hover:scale-110 transition-transform">
                 <feature.icon className="w-6 h-6 text-primary-foreground" />
               </div>
 
-              {/* Content */}
               <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
@@ -126,7 +147,6 @@ const Features = () => {
                 {feature.description}
               </p>
 
-              {/* Hover Gradient Border */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 <div className="absolute inset-[-1px] rounded-2xl bg-gradient-primary opacity-20" />
               </div>
@@ -136,18 +156,16 @@ const Features = () => {
 
         {/* Product Tour Carousel */}
         <div className="mt-28">
-          {/* Context header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
               Por dentro do HubBot
             </span>
             <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              Veja a plataforma{" "}
-              <span className="text-gradient">em ação</span>
+              Veja a plataforma <span className="text-gradient">em ação</span>
             </h3>
             <p className="text-lg text-muted-foreground">
-              Do inbox unificado aos agentes de IA, campanhas e relatórios —
-              navegue pelas telas reais que sua equipe usa no dia a dia.
+              Do inbox unificado aos workflows, agentes, campanhas e relatórios —
+              as telas reais que sua equipe usa todo dia.
             </p>
           </div>
 

@@ -13,74 +13,64 @@ import {
 
 const slides = [
   {
+    src: "/assets/app-workflow-editor.png",
+    title: "Editor de workflows",
+    desc: "Gatilho, condições e passos num canvas de arrastar. Você desenha o atendimento e publica com um clique.",
+  },
+  {
+    src: "/assets/app-agentes-time.png",
+    title: "Time de agentes de IA",
+    desc: "Um roteador entende a intenção e entrega para o especialista certo: Financeiro, Suporte, Vendas, Retenção ou Recepção.",
+  },
+  {
     src: "/assets/app-conversas.png",
-    w: 1910,
-    h: 925,
     title: "Inbox de conversas",
-    desc: "WhatsApp, Instagram, Telegram e chat web numa fila única, com status, atribuições e tags.",
+    desc: "WhatsApp, Instagram, Telegram e chat do site numa fila única, com status, atribuições e tags.",
   },
   {
-    src: "/assets/app-agentes-ia.png",
-    w: 1888,
-    h: 916,
-    title: "Agentes de IA",
-    desc: "Um roteador que entende a intenção do cliente e direciona para o agente especializado certo.",
+    src: "/assets/app-workflow-modelos.png",
+    title: "Modelos prontos",
+    desc: "Fluxos já testados em operação de provedor — atendimento com IXC, NPS, inatividade, boas-vindas e anúncios.",
   },
   {
-    src: "/assets/app-dashboard-campanhas.png",
-    w: 1888,
-    h: 916,
-    title: "Dashboard de campanhas",
-    desc: "Enviadas, entregues, lidas e respondidas — o desempenho das suas campanhas em tempo real.",
+    src: "/assets/app-integracoes-erp.png",
+    title: "Integrações",
+    desc: "IXC, SGP, Hubsoft, MK Solutions, Zabbix, Ligue Talk e Google Agenda conectados ao atendimento.",
+  },
+  {
+    src: "/assets/app-agente-ferramentas.png",
+    title: "Ferramentas do agente",
+    desc: "Você liga e desliga o que cada agente pode fazer: escalar, encerrar, atualizar cadastro, agendar, consultar o ERP.",
   },
   {
     src: "/assets/app-dashboard-produtividade.png",
-    w: 1888,
-    h: 916,
     title: "Produtividade do atendimento",
-    desc: "Tempo médio de atendimento e de espera, NPS e indicadores que precisam de atenção.",
+    desc: "Tempo médio de atendimento e de espera, quanto a IA encerrou sozinha e o que precisa de atenção.",
   },
   {
     src: "/assets/app-nps.png",
-    w: 1888,
-    h: 916,
     title: "NPS e satisfação",
-    desc: "Acompanhe promotores, passivos e detratores e a distribuição de notas por período.",
+    desc: "Promotores, passivos e detratores, com a nota amarrada a quem conduziu cada atendimento.",
   },
   {
     src: "/assets/app-campanhas.png",
-    w: 1888,
-    h: 916,
     title: "Campanhas em massa",
-    desc: "Dispare templates de WhatsApp para sua base com controle de status e qualidade do número.",
+    desc: "Dispare templates de WhatsApp para a sua base com controle de status e qualidade do número.",
   },
   {
-    src: "/assets/app-templates.png",
-    w: 1888,
-    h: 916,
-    title: "Templates de mensagem",
-    desc: "Crie e gerencie os templates aprovados de WhatsApp usados em cobranças e ofertas.",
+    src: "/assets/app-dashboard-campanhas.png",
+    title: "Resultado das campanhas",
+    desc: "Enviadas, entregues, lidas e respondidas — o desempenho de cada disparo em tempo real.",
   },
   {
     src: "/assets/app-ciclo-de-vida.png",
-    w: 1888,
-    h: 916,
     title: "Ciclo de vida do contato",
-    desc: "Estágios automáticos — de lead capturado a cliente ativo — definidos pela própria IA.",
-  },
-  {
-    src: "/assets/app-integracoes.png",
-    w: 1888,
-    h: 916,
-    title: "Integrações",
-    desc: "Conecte CRM e monitoramento (MK Solutions, Zabbix) para consultas e ações automáticas.",
+    desc: "Estágios atualizados pela própria IA durante a conversa, de lead capturado a cliente ativo.",
   },
   {
     src: "/assets/app-numeros-restritos.png",
-    w: 1888,
-    h: 916,
     title: "Números restritos",
-    desc: "Opt-out automático: quem pede para não receber mais é removido das campanhas na hora.",
+    desc: "Opt-out automático: quem pede para não receber mais sai das campanhas na hora.",
   },
 ];
 
@@ -109,17 +99,18 @@ export function ProductCarousel() {
         <CarouselContent>
           {slides.map((slide, i) => (
             <CarouselItem key={slide.src}>
-              <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
+              {/* Altura fixa pelo aspecto: evita o carrossel "pular" entre
+                  telas capturadas em tamanhos ligeiramente diferentes. */}
+              <div className="relative aspect-[1408/708] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
                 <Image
                   src={slide.src}
                   alt={`${slide.title} — ${slide.desc}`}
-                  width={slide.w}
-                  height={slide.h}
+                  fill
                   sizes="(max-width: 768px) 100vw, 1024px"
                   quality={90}
                   priority={i === 0}
                   loading={i === 0 ? undefined : "lazy"}
-                  className="w-full h-auto"
+                  className="object-cover object-top"
                 />
               </div>
             </CarouselItem>

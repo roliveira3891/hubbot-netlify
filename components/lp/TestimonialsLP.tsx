@@ -1,28 +1,46 @@
 "use client";
 
-import { Wifi, TrendingUp, Clock } from "lucide-react";
+import { FileText, Unlock, Gauge, Radio, CalendarCheck, Star } from "lucide-react";
 
-const testimonials = [
+// Prova concreta do que a IA executa sozinha no ERP do provedor.
+// Substitui os depoimentos ilustrativos que existiam aqui — só volta a ter
+// depoimento quando houver case real, com nome, empresa e consentimento.
+const resolved = [
   {
-    quote: "Antes perdíamos 40% dos leads por demora. Com o HubBot, respondemos em 8 segundos — nossas vendas triplicaram em 3 meses.",
-    author: "Ricardo Mendes",
-    role: "Diretor Comercial, NetVia Telecom",
-    image: '/assets/testimonial-ricardo.jpg',
-    metric: { icon: TrendingUp, value: "+200%", label: "vendas" },
+    icon: FileText,
+    title: "2ª via da fatura",
+    text: "Identifica o cliente pelo CPF/CNPJ e devolve link, linha digitável e PIX na mesma mensagem.",
+    erp: "IXC · SGP · Hubsoft",
   },
   {
-    quote: "O vendedor de IA qualifica sozinho. Meu time só entra quando o cliente já quer assinar. Produtividade foi pro teto.",
-    author: "Patrícia Santos",
-    role: "CEO, Conecta Fibra",
-    image: '/assets/testimonial-patricia.jpg',
-    metric: { icon: Clock, value: "-80%", label: "tempo" },
+    icon: Unlock,
+    title: "Internet bloqueada",
+    text: "Confirma o bloqueio por inadimplência e libera o desbloqueio de confiança pela regra do seu ERP.",
+    erp: "IXC · SGP · MK · Hubsoft",
   },
   {
-    quote: "Feriado, final de semana, madrugada — o HubBot não para. É como ter um vendedor que nunca dorme e nunca reclama.",
-    author: "Fernando Costa",
-    role: "Sócio, SpeedNet Revendas",
-    image: '/assets/testimonial-fernando.jpg',
-    metric: { icon: Wifi, value: "24/7", label: "ativo" },
+    icon: Gauge,
+    title: "Velocidade reduzida",
+    text: "Verifica a redução por atraso e retira a limitação sem passar por atendente.",
+    erp: "IXC · MK",
+  },
+  {
+    icon: Radio,
+    title: "Internet lenta",
+    text: "Checa status e sinal da ONU antes de abrir chamado — e poupa visita técnica desnecessária.",
+    erp: "Zabbix",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Agendamento",
+    text: "Marca retirada, instalação ou visita técnica durante a própria conversa.",
+    erp: "Agenda · Google Agenda",
+  },
+  {
+    icon: Star,
+    title: "Pesquisa de satisfação",
+    text: "Pergunta a nota de 0 a 10 ao encerrar e registra no relatório de NPS.",
+    erp: "NPS",
   },
 ];
 
@@ -33,57 +51,38 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-medium text-sm uppercase tracking-wider">
-            Resultados Reais
+            Resultados
           </span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-            Provedores que{" "}
-            <span className="text-gradient">pararam de perder vendas</span>
+            O que sai da fila do seu time{" "}
+            <span className="text-gradient">já na primeira semana</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Veja como empresas de telecom estão vendendo mais com HubBot.
+            O HubBot é integrado ao ERP do seu provedor. Estas são as
+            solicitações que ele resolve de ponta a ponta, sem passar por
+            atendente.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {resolved.map((item) => (
             <div
-              key={testimonial.author}
-              className="rounded-2xl p-8 glass hover:bg-card/70 transition-all duration-300"
+              key={item.title}
+              className="flex flex-col rounded-2xl p-8 glass hover:bg-card/70 transition-all duration-300"
             >
-              {/* Metric Badge */}
-              <div className="flex items-center gap-2 mb-6 p-3 rounded-lg bg-primary/10 w-fit">
-                <testimonial.metric.icon className="w-5 h-5 text-primary" />
-                <span className="font-bold text-foreground">{testimonial.metric.value}</span>
-                <span className="text-sm text-muted-foreground">{testimonial.metric.label}</span>
+              <div className="w-11 h-11 rounded-xl bg-gradient-primary flex items-center justify-center mb-5 shadow-glow">
+                <item.icon className="w-5 h-5 text-primary-foreground" />
               </div>
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-foreground text-lg mb-8 leading-relaxed">
-                "{testimonial.quote}"
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                {item.title}
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                {item.text}
               </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.author}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-primary/20"
-                />
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
+              <p className="text-xs text-primary font-medium mt-5 pt-5 border-t border-border">
+                {item.erp}
+              </p>
             </div>
           ))}
         </div>

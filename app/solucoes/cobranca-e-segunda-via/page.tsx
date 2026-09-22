@@ -68,12 +68,12 @@ const dores = [
 ];
 
 const recursos = [
-  "Segunda via de boleto e código Pix na conversa",
-  "Lembretes automáticos antes do vencimento",
-  "Régua de cobrança educada após o atraso",
-  "Negociação e parcelamento conduzidos pela IA",
-  "Confirmação de pagamento e baixa automática",
-  "Integração com o sistema de gestão e financeiro",
+  "2ª via com link, linha digitável e PIX emitida direto no seu ERP",
+  "Consulta de faturas em aberto, com total e quantas venceram",
+  "Workflow de lembrete antes do vencimento, pronto para usar",
+  "Workflow de cobrança da fatura vencida, com tom que você define",
+  "Desbloqueio de confiança liberado pela regra do seu próprio ERP",
+  "Integração com IXC, SGP/TSMX, MK Solutions e Hubsoft",
 ];
 
 const comoFunciona = [
@@ -81,32 +81,32 @@ const comoFunciona = [
     icon: BellRing,
     title: "Lembrete antes do vencimento",
     description:
-      "Dias antes de vencer, o cliente recebe a fatura com o Pix copia-e-cola no WhatsApp. Pagar fica mais fácil que esquecer.",
+      "Um workflow pronto avisa o cliente dias antes de vencer, já com o PIX copia-e-cola no WhatsApp. Pagar fica mais fácil que esquecer.",
   },
   {
     icon: FileText,
     title: "2ª via instantânea, sem atendente",
     description:
-      "O cliente pede e a IA entrega boleto ou Pix em segundos, a qualquer hora — sem ocupar ninguém da equipe.",
+      "O cliente pede, a IA identifica ele pelo CPF/CNPJ, busca a fatura no seu ERP e devolve link, linha digitável e PIX na mesma mensagem — a qualquer hora.",
   },
   {
     icon: Handshake,
     title: "Cobrança que preserva a relação",
     description:
-      "Atrasou? A IA cobra com educação, oferece negociação e parcelamento, e resolve sem constrangimento — nem para o cliente, nem para você.",
+      "Atrasou? O workflow de cobrança conversa com educação, no tom que você definiu, e oferece as opções que a sua política permite — sem constrangimento e sem ligação.",
   },
   {
     icon: Wallet,
-    title: "Pagamento confirmado, caixa em dia",
+    title: "Bloqueado? Resolvido na conversa",
     description:
-      "Pagou, a IA confirma, agradece e dá baixa. Sua régua de cobrança roda sozinha do lembrete à quitação.",
+      "A IA confirma o bloqueio por inadimplência e libera o desbloqueio de confiança pela regra do seu ERP. O cliente volta a navegar sem falar com ninguém.",
   },
 ];
 
 const stats = [
   { value: "24/7", label: "2ª via sem depender de atendente" },
-  { value: "3s", label: "Para entregar boleto ou Pix" },
-  { value: "100%", label: "Da régua de cobrança automatizada" },
+  { value: "PIX", label: "Link, linha digitável e PIX na mesma mensagem" },
+  { value: "4 ERPs", label: "IXC, SGP/TSMX, MK Solutions e Hubsoft" },
 ];
 
 const faqItems = [

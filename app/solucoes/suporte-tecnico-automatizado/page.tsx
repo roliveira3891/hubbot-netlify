@@ -25,13 +25,13 @@ import { whatsappUrl } from "@/lib/contact";
 export const metadata = createMetadata({
   title: "Suporte Técnico Automatizado com IA para Provedores | N1 24/7",
   description:
-    "Automatize o suporte técnico do seu provedor com IA: diagnóstico guiado, avisos de massiva integrados ao monitoramento, abertura de chamados e transbordo com contexto. Suporte N1 resolvido 24/7.",
+    "Automatize o suporte técnico do seu provedor com IA: diagnóstico guiado, sinal da ONU consultado no Zabbix, verificação de bloqueio no ERP e transbordo com contexto. Suporte N1 resolvido 24/7.",
   keywords: [
     "suporte técnico automatizado",
     "automatizar suporte provedor de internet",
     "suporte N1 com IA",
     "diagnóstico de conexão automático",
-    "aviso de massiva automático",
+    "diagnóstico de conexão com IA",
     "integração Zabbix atendimento",
     "reduzir chamados de suporte",
     "suporte 24 horas provedor",
@@ -68,11 +68,11 @@ const dores = [
 
 const recursos = [
   "Diagnóstico guiado de conexão pela conversa",
-  "Aviso proativo de massiva integrado ao monitoramento",
-  "Verificação de status e sinal em tempo real",
-  "Abertura e acompanhamento de chamados",
-  "Agendamento de visita técnica só quando preciso",
-  "Transbordo para o N2 com todo o histórico",
+  "Sinal e status da ONU consultados no Zabbix antes de abrir chamado",
+  "Verificação de bloqueio e se a conexão está online, direto no ERP",
+  "Retirada da redução de velocidade quando o problema é comercial",
+  "Agendamento de visita técnica na Agenda, só quando precisa mesmo",
+  "Transbordo para o N2 com todo o histórico e os testes já feitos",
 ];
 
 const comoFunciona = [
@@ -86,7 +86,7 @@ const comoFunciona = [
     icon: Activity,
     title: "A IA diagnostica primeiro",
     description:
-      "Se há massiva, ela informa a previsão de retorno. Se é pontual, conduz o passo a passo de verificação com o cliente.",
+      "Ela checa no Zabbix se a ONU está online e qual a qualidade do sinal, verifica no ERP se o serviço está bloqueado ou com velocidade reduzida, e só então conduz o passo a passo com o cliente.",
   },
   {
     icon: Wrench,
@@ -112,17 +112,17 @@ const faqItems = [
   {
     question: "O que o suporte técnico automatizado resolve sozinho?",
     answer:
-      "A IA do HubBot resolve o nível 1 do suporte: diagnóstico guiado de conexão, verificação de status e sinal, avisos de massiva e manutenção, reinicialização assistida de equipamentos e abertura de chamados. Os casos que exigem um técnico chegam à equipe já diagnosticados.",
+      "A IA do HubBot resolve o nível 1 do suporte: consulta o sinal e o status da ONU no Zabbix, verifica no ERP se o serviço está bloqueado ou com a velocidade reduzida por atraso, conduz o diagnóstico guiado com o cliente (energia, cabos, reinicialização) e agenda a visita técnica quando é o caso. Os casos que exigem um técnico chegam à equipe já diagnosticados.",
   },
   {
-    question: "Como funciona o aviso automático de massiva?",
+    question: "Como o HubBot usa a integração com o Zabbix?",
     answer:
-      "Integrada ao sistema de monitoramento do provedor (como o Zabbix), a IA detecta a falha regional e passa a informar automaticamente os clientes da área afetada sobre o problema e a previsão de retorno — segurando a enxurrada de chamados enquanto a equipe técnica trabalha na correção.",
+      "Quando o cliente relata lentidão ou queda, a IA consulta no Zabbix se a ONU dele está online e qual é a qualidade do sinal da fibra. Com isso ela separa o que é problema físico na casa do cliente, o que é sinal degradado e o que é bloqueio comercial — antes de abrir qualquer chamado.",
   },
   {
     question: "A IA realmente consegue diagnosticar problema de conexão?",
     answer:
-      "Sim, para a grande maioria dos casos de nível 1. Ela consulta o status da conexão no sistema do provedor, verifica se há massiva na região e conduz o cliente em testes guiados (energia, cabos, reinicialização). Só encaminha para visita técnica quando o diagnóstico indica necessidade real.",
+      "Sim, para a grande maioria dos casos de nível 1. Ela consulta o status da conexão no ERP e o sinal da ONU no Zabbix, e conduz o cliente em testes guiados (energia, cabos, reinicialização). Só encaminha para visita técnica quando o diagnóstico indica necessidade real.",
   },
   {
     question: "Isso reduz visitas técnicas desnecessárias?",
@@ -180,9 +180,10 @@ export default function SuporteTecnicoAutomatizadoPage() {
               <span className="text-gradient">antes de virar fila</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              A IA diagnostica a conexão, avisa massivas antes do cliente
-              reclamar e abre chamado só quando precisa. Sua equipe técnica
-              recebe contexto — não uma fila de &quot;minha internet caiu&quot;.
+              A IA checa o sinal da ONU no Zabbix, confirma se o serviço está
+              bloqueado no ERP e abre chamado só quando precisa. Sua equipe
+              técnica recebe contexto — não uma fila de &quot;minha internet
+              caiu&quot;.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" className="group" asChild>

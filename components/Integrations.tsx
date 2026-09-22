@@ -2,14 +2,48 @@
 
 import Image from "next/image";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
+  Activity,
+  CalendarCheck,
+  PhoneCall,
+  Target,
+  IdCard,
+  MapPin,
+} from "lucide-react";
 
-const integrations = [
+// ERPs de provedor conectados de verdade — as ações abaixo são as que a IA
+// executa durante a própria conversa, não apenas consulta.
+const erps = [
+  {
+    slug: "ixc",
+    name: "IXC Soft",
+    logo: "/assets/integrations/ixc.png",
+    logoWidth: 512,
+    logoHeight: 512,
+    logoClassName: "h-12 w-auto object-contain rounded-xl",
+    chip: "none",
+    actions: [
+      "2ª via da fatura com link, linha digitável e PIX",
+      "Faturas em aberto, com total e quantas venceram",
+      "Desbloqueio de confiança",
+      "Liberar redução de velocidade",
+      "Verificar bloqueio e se a conexão está online",
+    ],
+  },
+  {
+    slug: "sgp",
+    name: "SGP / TSMX",
+    logo: "/assets/integrations/sgp.svg",
+    logoWidth: 116,
+    logoHeight: 32,
+    logoClassName: "h-7 w-auto object-contain",
+    chip: "light",
+    actions: [
+      "Consulta de cliente, plano e situação do contrato",
+      "Faturas e PIX direto no atendimento",
+      "Liberação em confiança pela regra do SGP",
+      "Verificar contrato suspenso e serviço online",
+    ],
+  },
   {
     slug: "mk",
     name: "MK Solutions",
@@ -18,8 +52,12 @@ const integrations = [
     logoHeight: 31,
     logoClassName: "h-7 w-auto object-contain",
     chip: "light",
-    description:
-      "Consulta faturas, emite 2ª via e verifica status de conexão do cliente em tempo real.",
+    actions: [
+      "Consulta de cliente, situação e contato",
+      "Verificar bloqueio da conexão e o motivo",
+      "Desbloquear conexão em confiança",
+      "Retirar a redução de velocidade por atraso",
+    ],
   },
   {
     slug: "hubsoft",
@@ -29,32 +67,47 @@ const integrations = [
     logoHeight: 24,
     logoClassName: "h-7 w-auto object-contain",
     chip: "dark",
-    description:
-      "Gestão completa do provedor conectada ao atendimento — contratos, planos e financeiro.",
-  },
-  {
-    slug: "ixc",
-    name: "IXC Soft",
-    logo: "/assets/integrations/ixc.png",
-    logoWidth: 512,
-    logoHeight: 512,
-    logoClassName: "h-14 w-auto object-contain rounded-xl",
-    chip: "none",
-    description:
-      "Contratos, boletos e chamados técnicos consultados direto na conversa com o cliente.",
-  },
-  {
-    slug: "sgp",
-    name: "SGP",
-    logo: "/assets/integrations/sgp.svg",
-    logoWidth: 116,
-    logoHeight: 32,
-    logoClassName: "h-7 w-auto object-contain",
-    chip: "light",
-    description:
-      "Sistema de Gestão para Provedores integrado à IA para cobrança e suporte automatizados.",
+    actions: [
+      "Consulta de cliente, plano, endereço e conexão",
+      "Faturas e PIX no meio da conversa",
+      "Desbloqueio de confiança por 1 dia",
+      "Verificar serviço suspenso e conexão online",
+    ],
   },
 ] as const;
+
+const others = [
+  {
+    icon: Activity,
+    name: "Zabbix",
+    desc: "A IA checa o sinal e o status da ONU antes de abrir chamado — resolve o que era só fibra suja e poupa visita técnica.",
+  },
+  {
+    icon: PhoneCall,
+    name: "Ligue Talk",
+    desc: "O cliente aperta 2 na ligação e o atendimento continua no WhatsApp, sem ficar preso na fila da telefonia.",
+  },
+  {
+    icon: Target,
+    name: "Rastreamento de anúncios",
+    desc: "Atribuição e conversões das campanhas Click-to-WhatsApp da Meta: você passa a saber qual anúncio virou cliente.",
+  },
+  {
+    icon: CalendarCheck,
+    name: "Google Agenda",
+    desc: "A IA consulta a disponibilidade e marca o compromisso durante o atendimento, com convite por e-mail.",
+  },
+  {
+    icon: IdCard,
+    name: "Consulta de CPF",
+    desc: "Preenche o cadastro do contato sem precisar de integração com ERP nenhum.",
+  },
+  {
+    icon: MapPin,
+    name: "Consulta de CEP",
+    desc: "Endereço, bairro, cidade e UF na hora — útil para cobertura e para agendar instalação.",
+  },
+];
 
 const chipClass: Record<string, string> = {
   dark: "rounded-lg bg-[#0d1117] px-3 py-2",
@@ -74,52 +127,86 @@ const Integrations = () => {
             Integrações
           </span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-            Conectado ao ERP{" "}
-            <span className="text-gradient">que o seu provedor já usa</span>
+            A IA não só responde.{" "}
+            <span className="text-gradient">Ela resolve no seu ERP.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Sem trocar de sistema. O HubBot conversa direto com o seu ERP para
-            consultar faturas, contratos e status de conexão durante o
-            próprio atendimento.
+            A diferença entre &ldquo;vou verificar e te retorno&rdquo; e o problema
+            resolvido na mesma mensagem. O HubBot consulta e executa direto no
+            sistema que o seu provedor já usa — sem trocar nada.
           </p>
         </div>
 
-        {/* Integration Cards */}
-        <Carousel opts={{ loop: true, align: "start" }} className="px-4 sm:px-0">
-          <CarouselContent>
-            {integrations.map((item) => (
-              <CarouselItem
-                key={item.slug}
-                className="basis-full sm:basis-1/2 lg:basis-1/4"
+        {/* ERPs com ações reais */}
+        <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-16">
+          {erps.map((item) => (
+            <div
+              key={item.slug}
+              className="group relative rounded-2xl p-6 glass hover:bg-card/70 transition-all duration-300 flex flex-col"
+            >
+              <div
+                className={`inline-flex items-center h-14 mb-5 self-start ${chipClass[item.chip]}`}
               >
-                <div className="group relative rounded-2xl p-6 glass hover:bg-card/70 transition-all duration-300 h-full">
-                  <div
-                    className={`inline-flex items-center h-14 mb-5 ${chipClass[item.chip]}`}
-                  >
-                    <Image
-                      src={item.logo}
-                      alt={item.name}
-                      width={item.logoWidth}
-                      height={item.logoHeight}
-                      className={item.logoClassName}
-                    />
-                  </div>
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  width={item.logoWidth}
+                  height={item.logoHeight}
+                  className={item.logoClassName}
+                />
+              </div>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+              <ul className="space-y-2">
+                {item.actions.map((action) => (
+                  <li key={action} className="flex items-start gap-2.5">
+                    <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-gradient-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground leading-relaxed">
+                      {action}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                    <div className="absolute inset-[-1px] rounded-2xl bg-gradient-primary opacity-20" />
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="absolute inset-[-1px] rounded-2xl bg-gradient-primary opacity-20" />
+              </div>
+            </div>
+          ))}
+        </div>
 
-          <CarouselPrevious className="hidden sm:flex -left-4 lg:-left-12 h-10 w-10" />
-          <CarouselNext className="hidden sm:flex -right-4 lg:-right-12 h-10 w-10" />
-        </Carousel>
+        {/* Screenshot do catálogo */}
+        <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden max-w-6xl mx-auto mb-16">
+          <Image
+            src="/assets/app-integracoes-erp.png"
+            alt="Catálogo de integrações do HubBot com IXC, SGP, Hubsoft, MK Solutions, Zabbix, Ligue Talk e Google Agenda"
+            width={1408}
+            height={708}
+            sizes="(max-width: 1024px) 100vw, 1100px"
+            quality={90}
+            className="w-full h-auto"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 pointer-events-none" />
+        </div>
+
+        {/* Outras integrações */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {others.map((item) => (
+            <div
+              key={item.name}
+              className="rounded-2xl p-6 glass border border-border"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                <item.icon className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-heading text-base font-semibold text-foreground mb-2">
+                {item.name}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

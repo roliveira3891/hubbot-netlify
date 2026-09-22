@@ -72,12 +72,6 @@ const Header = () => {
             >
               Resultados
             </button>
-            <Link
-              href="/blog"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Blog
-            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -140,13 +134,6 @@ const Header = () => {
               >
                 Resultados
               </button>
-              <Link
-                href="/blog"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-3 px-4"
-              >
-                Blog
-              </Link>
               <div className="pt-4 mt-2 border-t border-border px-4">
                 {/* <Button
                   variant="hero"

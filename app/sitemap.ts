@@ -4,49 +4,15 @@ import { siteConfig } from "@/lib/seo";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
 
-  // Páginas estáticas
+  // Só a home (e as páginas legais) ficam indexadas. /produto, /segmentos/* e
+  // /solucoes/* continuam no ar, mas estão sem manutenção e marcadas como
+  // noindex (ver `noIndex` em createMetadata). O blog também está oculto.
   const routes = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 1,
-    },
-    {
-      url: `${baseUrl}/produto`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/segmentos/revendas-de-telecom`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/segmentos/provedores-de-internet`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/solucoes/qualidade-no-atendimento`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solucoes/cobranca-e-segunda-via`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solucoes/suporte-tecnico-automatizado`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
     },
     {
       url: `${baseUrl}/politica-de-privacidade`,
@@ -62,7 +28,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Blog oculto por enquanto: as rotas continuam existindo, mas ficam fora do
-  // sitemap e marcadas como noindex (ver app/blog/**/page.tsx).
   return routes;
 }

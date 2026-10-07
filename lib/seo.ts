@@ -109,12 +109,16 @@ export function createMetadata({
   keywords,
   image,
   path = "",
+  noIndex = false,
 }: {
   title: string;
   description: string;
   keywords?: string[];
   image?: string;
   path?: string;
+  // Página no ar, mas fora do Google. follow continua true para que os links
+  // dela (para a home) ainda passem relevância.
+  noIndex?: boolean;
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
   const ogImage = image || siteConfig.ogImage;
@@ -149,6 +153,13 @@ export function createMetadata({
     alternates: {
       canonical: url,
     },
+    ...(noIndex && {
+      robots: {
+        index: false,
+        follow: true,
+        googleBot: { index: false, follow: true },
+      },
+    }),
   };
 }
 
@@ -219,12 +230,6 @@ export function createSoftwareApplicationSchema() {
       "Analytics e relatórios em tempo real",
       "Integrações com CRM e sistemas de provedor",
     ],
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "BRL",
-      availability: "https://schema.org/InStock",
-      url: siteConfig.url,
-    },
     provider: {
       "@id": `${siteConfig.url}/#organization`,
     },

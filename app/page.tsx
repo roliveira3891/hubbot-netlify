@@ -14,7 +14,7 @@ import { createMetadata, createSoftwareApplicationSchema } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "HubBot — IA que resolve no ERP do seu provedor de internet",
   description:
-    "Plataforma de atendimento com IA para provedores de internet. Integrada ao IXC, SGP, MK Solutions, Hubsoft, Zabbix e outros: emite 2ª via com PIX, libera desbloqueio de confiança e testa o sinal da ONU. WhatsApp, Instagram, Telegram e chat do site numa fila só, com workflows visuais.",
+    "Atendimento com IA para provedores de internet, integrado ao IXC, SGP, MK e Hubsoft: 2ª via com PIX, desbloqueio de confiança e sinal da ONU no WhatsApp.",
   keywords: [
     "plataforma de atendimento para provedores de internet",
     "IA integrada ao IXC",

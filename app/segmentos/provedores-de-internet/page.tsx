@@ -38,6 +38,8 @@ export const metadata = createMetadata({
     "vender planos de internet pelo WhatsApp",
   ],
   path: "/segmentos/provedores-de-internet",
+  // Página sem manutenção: fica no ar, mas fora do Google e do sitemap.
+  noIndex: true,
 });
 
 const dores = [

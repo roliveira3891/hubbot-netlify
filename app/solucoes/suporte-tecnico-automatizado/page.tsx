@@ -37,6 +37,8 @@ export const metadata = createMetadata({
     "suporte 24 horas provedor",
   ],
   path: "/solucoes/suporte-tecnico-automatizado",
+  // Página sem manutenção: fica no ar, mas fora do Google e do sitemap.
+  noIndex: true,
 });
 
 const dores = [

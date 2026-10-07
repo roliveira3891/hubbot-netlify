@@ -38,6 +38,8 @@ export const metadata = createMetadata({
     "régua de cobrança automatizada",
   ],
   path: "/solucoes/cobranca-e-segunda-via",
+  // Página sem manutenção: fica no ar, mas fora do Google e do sitemap.
+  noIndex: true,
 });
 
 const dores = [

@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="py-16 border-t border-border bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center mb-4">
@@ -49,7 +49,9 @@ const Footer = () => {
             </div> */}
           </div>
 
-          {/* Soluções */}
+          {/* Soluções: oculto por enquanto. As páginas linkadas aqui estão sem
+              manutenção e marcadas como noindex. Para reexibir, descomente. */}
+          {/*
           <div>
             <h2 className="font-semibold text-foreground mb-4">Soluções</h2>
             <nav className="flex flex-col gap-2">
@@ -73,6 +75,7 @@ const Footer = () => {
               </Link>
             </nav>
           </div>
+          */}
 
           {/* Contact */}
           <div className="md:text-right">

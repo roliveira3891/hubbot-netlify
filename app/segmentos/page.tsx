@@ -6,23 +6,21 @@ import { createMetadata, createBreadcrumbSchema } from "@/lib/seo";
 
 // Página antiga e genérica (e-commerce, educação etc.) — fora do foco telecom.
 // Mantida acessível pela URL, mas oculta do Google e da navegação do site.
-export const metadata = {
-  ...createMetadata({
-    title: "Soluções por Segmento | E-commerce, Empresas, Educação e Mais",
-    description: "Soluções de IA personalizadas para E-commerce, Empresas, Educação, Serviços Financeiros e Saúde. Atendimento inteligente adaptado para cada setor.",
-    keywords: [
-      "e-commerce chatbot",
-      "automação empresarial",
-      "educação EAD",
-      "fintech atendimento",
-      "saúde telemedicina",
-      "varejo automação",
-      "atendimento por setor",
-    ],
-    path: "/segmentos",
-  }),
-  robots: { index: false, follow: false },
-};
+export const metadata = createMetadata({
+  title: "Soluções por Segmento | E-commerce, Empresas, Educação e Mais",
+  description: "Soluções de IA personalizadas para E-commerce, Empresas, Educação, Serviços Financeiros e Saúde. Atendimento inteligente adaptado para cada setor.",
+  keywords: [
+    "e-commerce chatbot",
+    "automação empresarial",
+    "educação EAD",
+    "fintech atendimento",
+    "saúde telemedicina",
+    "varejo automação",
+    "atendimento por setor",
+  ],
+  path: "/segmentos",
+  noIndex: true,
+});
 
 const segmentosSections = [
   {

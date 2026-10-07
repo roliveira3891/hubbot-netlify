@@ -53,12 +53,5 @@ As integrações abaixo já estão prontas. Se o provedor usa outro ERP, a integ
 ## Páginas
 
 - [Início](https://hubbot.io/): visão geral da plataforma, workflows, agentes de IA e integrações com ERP.
-- [Produto](https://hubbot.io/produto): workflows, agentes de IA, conversas, integrações, campanhas e relatórios, com as telas reais do sistema.
-- [Segmentos](https://hubbot.io/segmentos): aplicações por segmento de mercado.
-- [Provedores de Internet](https://hubbot.io/segmentos/provedores-de-internet): atendimento e vendas para ISPs.
-- [Revendas de Telecom](https://hubbot.io/segmentos/revendas-de-telecom): atendimento para revendas.
-- [Cobrança e 2ª Via](https://hubbot.io/solucoes/cobranca-e-segunda-via): 2ª via com PIX, lembrete de vencimento e cobrança automatizada.
-- [Suporte Técnico Automatizado](https://hubbot.io/solucoes/suporte-tecnico-automatizado): diagnóstico de conexão, sinal da ONU e redução de visitas técnicas.
-- [Qualidade no Atendimento](https://hubbot.io/solucoes/qualidade-no-atendimento): NPS, relatórios de qualidade e insights de conversa.
 - [Política de Privacidade](https://hubbot.io/politica-de-privacidade)
 - [Termos de Serviço](https://hubbot.io/termos-de-servico)

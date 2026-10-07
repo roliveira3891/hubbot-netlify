@@ -38,6 +38,8 @@ export const metadata = createMetadata({
     "follow-up automático de leads",
   ],
   path: "/segmentos/revendas-de-telecom",
+  // Página sem manutenção: fica no ar, mas fora do Google e do sitemap.
+  noIndex: true,
 });
 
 const dores = [

@@ -38,6 +38,8 @@ export const metadata = createMetadata({
     "atendimento sem fila",
   ],
   path: "/solucoes/qualidade-no-atendimento",
+  // Página sem manutenção: fica no ar, mas fora do Google e do sitemap.
+  noIndex: true,
 });
 
 const dores = [

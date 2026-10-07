@@ -30,6 +30,8 @@ export const metadata = createMetadata({
     "relatórios de atendimento",
   ],
   path: "/produto",
+  // Página sem manutenção: fica no ar, mas fora do Google e do sitemap.
+  noIndex: true,
 });
 
 const productSections = [
